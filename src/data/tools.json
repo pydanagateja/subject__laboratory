@@ -1,0 +1,520 @@
+[
+  {
+    "id": 1,
+    "name": "Python",
+    "category": "Programming Language",
+    "icon": "🐍",
+    "shortDescription": "High-level programming language for data science and machine learning.",
+    "description": "Python is a versatile, high-level programming language that has become the de facto standard for data science, machine learning, and scientific computing. Its simple syntax, extensive libraries, and strong community support make it ideal for beginners and experts alike.",
+    "features": [
+      "Easy to learn and read syntax",
+      "Extensive library ecosystem",
+      "Cross-platform compatibility",
+      "Strong community support",
+      "Integration with other languages",
+      "Object-oriented and functional programming"
+    ],
+    "useCases": [
+      "Data analysis and visualization",
+      "Machine learning and AI",
+      "Web scraping and automation",
+      "Scientific computing",
+      "Web development",
+      "Task automation"
+    ],
+    "installation": "Download from python.org or use package managers:\n\nWindows: Download installer from python.org\nMac: brew install python3\nLinux: sudo apt-get install python3",
+    "basicExample": "# Python basics\nprint('Hello, Data Science!')\n\n# Variables and data types\nname = 'Alice'\nage = 25\nscore = 95.5\n\n# Lists and operations\nnumbers = [1, 2, 3, 4, 5]\nprint(sum(numbers))\n\n# Functions\ndef greet(name):\n    return f'Hello, {name}!'\n\nprint(greet('Bob'))",
+    "resources": [
+      "Official Documentation: https://docs.python.org",
+      "Python Tutorial: https://docs.python.org/3/tutorial/",
+      "Real Python: https://realpython.com",
+      "Python for Data Science: https://www.python.org/about/gettingstarted/"
+    ],
+    "relatedExperiments": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "difficulty": "Beginner",
+    "version": "3.11+",
+    "license": "PSF License"
+  },
+  {
+    "id": 2,
+    "name": "Pandas",
+    "category": "Data Manipulation",
+    "icon": "🐼",
+    "shortDescription": "Powerful data manipulation and analysis library for Python.",
+    "description": "Pandas is a fast, powerful, flexible and easy-to-use open-source data analysis and manipulation library built on top of Python. It provides data structures like DataFrame and Series that make data cleaning, exploration, and analysis straightforward and efficient.",
+    "features": [
+      "DataFrame and Series data structures",
+      "Reading/writing data in multiple formats",
+      "Data cleaning and preparation",
+      "Handling missing data",
+      "Merging and joining datasets",
+      "Time series functionality",
+      "Statistical analysis capabilities"
+    ],
+    "useCases": [
+      "Data cleaning and preprocessing",
+      "Exploratory data analysis",
+      "Time series analysis",
+      "Data transformation and reshaping",
+      "Statistical analysis",
+      "Data import and export"
+    ],
+    "installation": "pip install pandas",
+    "basicExample": "import pandas as pd\n\n# Create DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [25, 30, 35],\n    'Score': [85, 90, 95]\n}\ndf = pd.DataFrame(data)\n\n# Display data\nprint(df)\nprint('\\nStatistics:')\nprint(df.describe())\n\n# Filter data\nhigh_scorers = df[df['Score'] > 85]\nprint('\\nHigh scorers:')\nprint(high_scorers)",
+    "resources": [
+      "Official Documentation: https://pandas.pydata.org/docs/",
+      "10 Minutes to Pandas: https://pandas.pydata.org/docs/user_guide/10min.html",
+      "Pandas Cheat Sheet: https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf",
+      "Real Python Pandas: https://realpython.com/pandas-python-explore-dataset/"
+    ],
+    "relatedExperiments": [1, 3, 4, 5, 6],
+    "difficulty": "Intermediate",
+    "version": "2.0+",
+    "license": "BSD 3-Clause"
+  },
+  {
+    "id": 3,
+    "name": "NumPy",
+    "category": "Numerical Computing",
+    "icon": "🔢",
+    "shortDescription": "Fundamental package for scientific computing with Python.",
+    "description": "NumPy is the fundamental package for numerical computing in Python. It provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently.",
+    "features": [
+      "N-dimensional array object",
+      "Broadcasting functions",
+      "Linear algebra operations",
+      "Random number generation",
+      "Fourier transforms",
+      "Tools for integrating C/C++ code",
+      "Optimized performance"
+    ],
+    "useCases": [
+      "Numerical computations",
+      "Matrix operations",
+      "Statistical analysis",
+      "Scientific computing",
+      "Image processing",
+      "Signal processing"
+    ],
+    "installation": "pip install numpy",
+    "basicExample": "import numpy as np\n\n# Create arrays\narr = np.array([1, 2, 3, 4, 5])\nmatrix = np.array([[1, 2], [3, 4]])\n\n# Array operations\nprint('Array:', arr)\nprint('Mean:', np.mean(arr))\nprint('Sum:', np.sum(arr))\n\n# Matrix operations\nprint('\\nMatrix:')\nprint(matrix)\nprint('Transpose:')\nprint(matrix.T)",
+    "resources": [
+      "Official Documentation: https://numpy.org/doc/",
+      "NumPy Quickstart: https://numpy.org/doc/stable/user/quickstart.html",
+      "NumPy Tutorial: https://numpy.org/numpy-tutorials/",
+      "From Python to NumPy: https://www.labri.fr/perso/nrougier/from-python-to-numpy/"
+    ],
+    "relatedExperiments": [3, 5, 7, 9],
+    "difficulty": "Intermediate",
+    "version": "1.24+",
+    "license": "BSD 3-Clause"
+  },
+  {
+    "id": 4,
+    "name": "Matplotlib",
+    "category": "Data Visualization",
+    "icon": "📊",
+    "shortDescription": "Comprehensive library for creating static, animated, and interactive visualizations.",
+    "description": "Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. It provides an object-oriented API for embedding plots into applications and publication-quality figures in various formats.",
+    "features": [
+      "Multiple plot types (line, bar, scatter, etc.)",
+      "Publication-quality figures",
+      "Interactive plotting",
+      "Customizable styles and themes",
+      "3D plotting capabilities",
+      "Animation support",
+      "Export to multiple formats"
+    ],
+    "useCases": [
+      "Data visualization",
+      "Statistical graphics",
+      "Scientific plots",
+      "Publication figures",
+      "Dashboard creation",
+      "Exploratory data analysis"
+    ],
+    "installation": "pip install matplotlib",
+    "basicExample": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# Line plot\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(10, 6))\nplt.plot(x, y, label='sin(x)', color='blue')\nplt.xlabel('X axis')\nplt.ylabel('Y axis')\nplt.title('Sine Wave')\nplt.legend()\nplt.grid(True)\nplt.show()",
+    "resources": [
+      "Official Documentation: https://matplotlib.org/stable/contents.html",
+      "Pyplot Tutorial: https://matplotlib.org/stable/tutorials/introductory/pyplot.html",
+      "Gallery: https://matplotlib.org/stable/gallery/index.html",
+      "Matplotlib Cheat Sheet: https://github.com/matplotlib/cheatsheets"
+    ],
+    "relatedExperiments": [5, 7, 9],
+    "difficulty": "Intermediate",
+    "version": "3.7+",
+    "license": "PSF License"
+  },
+  {
+    "id": 5,
+    "name": "Seaborn",
+    "category": "Data Visualization",
+    "icon": "🎨",
+    "shortDescription": "Statistical data visualization library based on Matplotlib.",
+    "description": "Seaborn is a Python data visualization library based on Matplotlib that provides a high-level interface for drawing attractive and informative statistical graphics. It comes with several built-in themes and color palettes to make beautiful plots easily.",
+    "features": [
+      "Beautiful default styles",
+      "Statistical plotting functions",
+      "Built-in themes and color palettes",
+      "Complex visualizations with simple syntax",
+      "Integration with Pandas DataFrames",
+      "Automatic statistical estimation",
+      "Faceted and multi-plot grids"
+    ],
+    "useCases": [
+      "Statistical data visualization",
+      "Exploratory data analysis",
+      "Correlation matrices",
+      "Distribution plots",
+      "Categorical data visualization",
+      "Time series visualization"
+    ],
+    "installation": "pip install seaborn",
+    "basicExample": "import seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load sample dataset\ntips = sns.load_dataset('tips')\n\n# Create visualization\nsns.set_style('whitegrid')\nplt.figure(figsize=(10, 6))\nsns.boxplot(x='day', y='total_bill', data=tips)\nplt.title('Total Bill by Day')\nplt.show()",
+    "resources": [
+      "Official Documentation: https://seaborn.pydata.org/",
+      "Tutorial: https://seaborn.pydata.org/tutorial.html",
+      "Gallery: https://seaborn.pydata.org/examples/index.html",
+      "API Reference: https://seaborn.pydata.org/api.html"
+    ],
+    "relatedExperiments": [5, 7],
+    "difficulty": "Intermediate",
+    "version": "0.12+",
+    "license": "BSD 3-Clause"
+  },
+  {
+    "id": 6,
+    "name": "Jupyter Notebook",
+    "category": "Development Environment",
+    "icon": "📓",
+    "shortDescription": "Web-based interactive development environment for data science.",
+    "description": "Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It's widely used for data cleaning, transformation, visualization, statistical modeling, and machine learning.",
+    "features": [
+      "Interactive code execution",
+      "Support for 40+ programming languages",
+      "Markdown and LaTeX support",
+      "Inline data visualization",
+      "Export to HTML, PDF, slides",
+      "Extension ecosystem",
+      "Kernel management"
+    ],
+    "useCases": [
+      "Data exploration and analysis",
+      "Machine learning experiments",
+      "Creating tutorials and documentation",
+      "Collaborative research",
+      "Reproducible research",
+      "Teaching and presentations"
+    ],
+    "installation": "pip install notebook\n\nThen run:\njupyter notebook",
+    "basicExample": "# In a Jupyter notebook cell:\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv('data.csv')\n\n# Display first rows\ndf.head()\n\n# Create visualization\ndf.plot(kind='bar')\nplt.show()",
+    "resources": [
+      "Official Documentation: https://jupyter-notebook.readthedocs.io/",
+      "Jupyter Tutorial: https://jupyter.org/try",
+      "JupyterLab Docs: https://jupyterlab.readthedocs.io/",
+      "Real Python Jupyter: https://realpython.com/jupyter-notebook-introduction/"
+    ],
+    "relatedExperiments": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "difficulty": "Beginner",
+    "version": "7.0+",
+    "license": "BSD 3-Clause"
+  },
+  {
+    "id": 7,
+    "name": "Google Colab",
+    "category": "Cloud Environment",
+    "icon": "☁️",
+    "shortDescription": "Free cloud-based Jupyter notebook environment with GPU support.",
+    "description": "Google Colaboratory (Colab) is a free cloud service that supports free GPU and TPU access. It's a Jupyter notebook environment that requires no setup and runs entirely in the cloud, making it perfect for machine learning, data analysis, and education.",
+    "features": [
+      "Free GPU and TPU access",
+      "No setup required",
+      "Easy sharing and collaboration",
+      "Integration with Google Drive",
+      "Pre-installed ML libraries",
+      "Access from any device",
+      "12 hours continuous runtime"
+    ],
+    "useCases": [
+      "Machine learning experiments",
+      "Deep learning model training",
+      "Data analysis without local setup",
+      "Educational projects",
+      "Collaborative research",
+      "Prototyping and testing"
+    ],
+    "installation": "No installation required!\n\nJust visit: https://colab.research.google.com\n\nRequires a Google account.",
+    "basicExample": "# In a Colab notebook:\n# Check GPU availability\nimport tensorflow as tf\nprint('GPU:', tf.config.list_physical_devices('GPU'))\n\n# Mount Google Drive\nfrom google.colab import drive\ndrive.mount('/content/drive')\n\n# Install packages\n!pip install package-name",
+    "resources": [
+      "Google Colab: https://colab.research.google.com",
+      "Welcome Notebook: https://colab.research.google.com/notebooks/intro.ipynb",
+      "FAQ: https://research.google.com/colaboratory/faq.html",
+      "Colab Tips: https://colab.research.google.com/notebooks/snippets/advanced_outputs.ipynb"
+    ],
+    "relatedExperiments": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "difficulty": "Beginner",
+    "version": "Latest",
+    "license": "Free to use"
+  },
+  {
+    "id": 8,
+    "name": "Requests",
+    "category": "Web Scraping",
+    "icon": "🌐",
+    "shortDescription": "Elegant and simple HTTP library for Python.",
+    "description": "Requests is an elegant and simple HTTP library for Python. It allows you to send HTTP requests extremely easily, handling authentication, cookies, and more automatically. It's the go-to library for interacting with web APIs and web scraping.",
+    "features": [
+      "Simple API for HTTP requests",
+      "Automatic JSON decoding",
+      "Session management",
+      "SSL verification",
+      "Cookie persistence",
+      "Authentication support",
+      "Streaming downloads"
+    ],
+    "useCases": [
+      "API consumption",
+      "Web scraping",
+      "Data collection from web sources",
+      "Testing web services",
+      "Downloading files",
+      "Form submissions"
+    ],
+    "installation": "pip install requests",
+    "basicExample": "import requests\n\n# GET request\nresponse = requests.get('https://api.github.com')\nprint('Status:', response.status_code)\nprint('JSON:', response.json())\n\n# POST request\ndata = {'key': 'value'}\nresponse = requests.post('https://httpbin.org/post', json=data)\nprint('Response:', response.json())",
+    "resources": [
+      "Official Documentation: https://requests.readthedocs.io/",
+      "Quickstart: https://requests.readthedocs.io/en/latest/user/quickstart/",
+      "Advanced Usage: https://requests.readthedocs.io/en/latest/user/advanced/",
+      "Real Python Requests: https://realpython.com/python-requests/"
+    ],
+    "relatedExperiments": [2, 8],
+    "difficulty": "Beginner",
+    "version": "2.31+",
+    "license": "Apache 2.0"
+  },
+  {
+    "id": 9,
+    "name": "BeautifulSoup",
+    "category": "Web Scraping",
+    "icon": "🍲",
+    "shortDescription": "Python library for pulling data out of HTML and XML files.",
+    "description": "Beautiful Soup is a Python library for pulling data out of HTML and XML files. It creates parse trees that is helpful to extract the data easily. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree.",
+    "features": [
+      "HTML and XML parsing",
+      "Easy navigation of parse tree",
+      "Searching and filtering",
+      "Modifying the tree",
+      "Multiple parser support",
+      "Encoding detection",
+      "Robust error handling"
+    ],
+    "useCases": [
+      "Web scraping",
+      "Data extraction from websites",
+      "HTML cleaning",
+      "Web content analysis",
+      "Automated data collection",
+      "XML parsing"
+    ],
+    "installation": "pip install beautifulsoup4\npip install lxml  # For faster parsing",
+    "basicExample": "from bs4 import BeautifulSoup\nimport requests\n\n# Fetch web page\nurl = 'https://example.com'\nresponse = requests.get(url)\n\n# Parse HTML\nsoup = BeautifulSoup(response.content, 'html.parser')\n\n# Extract data\ntitle = soup.find('title').text\nlinks = soup.find_all('a')\n\nprint('Title:', title)\nprint('Links:', len(links))",
+    "resources": [
+      "Official Documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/",
+      "Quick Start: https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start",
+      "Real Python Tutorial: https://realpython.com/beautiful-soup-web-scraper-python/",
+      "Web Scraping Guide: https://realpython.com/python-web-scraping-practical-introduction/"
+    ],
+    "relatedExperiments": [8],
+    "difficulty": "Beginner",
+    "version": "4.12+",
+    "license": "MIT"
+  },
+  {
+    "id": 10,
+    "name": "SQLite / SQL",
+    "category": "Database",
+    "icon": "🗄️",
+    "shortDescription": "Lightweight disk-based database and SQL query language.",
+    "description": "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured SQL database engine. SQL (Structured Query Language) is a standard language for storing, manipulating, and retrieving data in databases.",
+    "features": [
+      "Serverless database",
+      "Zero configuration",
+      "Transactional",
+      "Cross-platform",
+      "Small footprint",
+      "Reliable and fast",
+      "ACID compliant"
+    ],
+    "useCases": [
+      "Local data storage",
+      "Application databases",
+      "Data analysis",
+      "Testing and prototyping",
+      "Embedded systems",
+      "Mobile applications"
+    ],
+    "installation": "# SQLite is built into Python\nimport sqlite3\n\n# For other databases:\npip install psycopg2  # PostgreSQL\npip install mysql-connector-python  # MySQL",
+    "basicExample": "import sqlite3\n\n# Connect to database\nconn = sqlite3.connect('example.db')\ncursor = conn.cursor()\n\n# Create table\ncursor.execute('''CREATE TABLE IF NOT EXISTS users\n                  (id INTEGER PRIMARY KEY,\n                   name TEXT,\n                   age INTEGER)''')\n\n# Insert data\ncursor.execute(\"INSERT INTO users VALUES (1, 'Alice', 25)\")\nconn.commit()\n\n# Query data\ncursor.execute(\"SELECT * FROM users\")\nprint(cursor.fetchall())\n\nconn.close()",
+    "resources": [
+      "SQLite Documentation: https://www.sqlite.org/docs.html",
+      "SQL Tutorial: https://www.w3schools.com/sql/",
+      "SQLite Tutorial: https://www.sqlitetutorial.net/",
+      "Python SQLite: https://docs.python.org/3/library/sqlite3.html"
+    ],
+    "relatedExperiments": [2],
+    "difficulty": "Intermediate",
+    "version": "3.x",
+    "license": "Public Domain"
+  },
+  {
+    "id": 11,
+    "name": "NLTK",
+    "category": "Natural Language Processing",
+    "icon": "💬",
+    "shortDescription": "Natural Language Toolkit for Python - NLP library.",
+    "description": "NLTK (Natural Language Toolkit) is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources, along with text processing libraries for classification, tokenization, stemming, tagging, and parsing.",
+    "features": [
+      "Text tokenization",
+      "Part-of-speech tagging",
+      "Named entity recognition",
+      "Sentiment analysis",
+      "Text classification",
+      "Corpus access",
+      "WordNet integration"
+    ],
+    "useCases": [
+      "Text preprocessing",
+      "Sentiment analysis",
+      "Language translation",
+      "Chatbot development",
+      "Text classification",
+      "Information extraction"
+    ],
+    "installation": "pip install nltk\n\n# Download required data\nimport nltk\nnltk.download('popular')",
+    "basicExample": "import nltk\nfrom nltk.tokenize import word_tokenize\nfrom nltk.corpus import stopwords\n\n# Tokenization\ntext = 'Data science is amazing!'\ntokens = word_tokenize(text)\nprint('Tokens:', tokens)\n\n# Remove stopwords\nstop_words = set(stopwords.words('english'))\nfiltered = [w for w in tokens if w.lower() not in stop_words]\nprint('Filtered:', filtered)",
+    "resources": [
+      "Official Documentation: https://www.nltk.org/",
+      "NLTK Book: https://www.nltk.org/book/",
+      "API Documentation: https://www.nltk.org/api/nltk.html",
+      "Real Python NLTK: https://realpython.com/nltk-nlp-python/"
+    ],
+    "relatedExperiments": [10],
+    "difficulty": "Intermediate",
+    "version": "3.8+",
+    "license": "Apache 2.0"
+  },
+  {
+    "id": 12,
+    "name": "VADER Sentiment",
+    "category": "Sentiment Analysis",
+    "icon": "😊",
+    "shortDescription": "Rule-based sentiment analysis tool for social media text.",
+    "description": "VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool specifically attuned to sentiments expressed in social media. It's particularly effective for short texts like tweets and product reviews.",
+    "features": [
+      "Social media optimized",
+      "Fast and lightweight",
+      "No training required",
+      "Emoji support",
+      "Slang and abbreviation handling",
+      "Intensity scoring",
+      "Compound sentiment score"
+    ],
+    "useCases": [
+      "Social media analysis",
+      "Product review analysis",
+      "Customer feedback analysis",
+      "Brand monitoring",
+      "Public opinion tracking",
+      "Comment sentiment detection"
+    ],
+    "installation": "pip install vaderSentiment",
+    "basicExample": "from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer\n\nanalyzer = SentimentIntensityAnalyzer()\n\ntexts = [\n    'I love this product! It is amazing! 😊',\n    'This is terrible and I hate it.',\n    'It is okay, nothing special.'\n]\n\nfor text in texts:\n    scores = analyzer.polarity_scores(text)\n    print(f'{text}')\n    print(f'Scores: {scores}\\n')",
+    "resources": [
+      "GitHub Repository: https://github.com/cjhutto/vaderSentiment",
+      "Research Paper: http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf",
+      "PyPI Documentation: https://pypi.org/project/vaderSentiment/",
+      "Tutorial: https://realpython.com/python-nltk-sentiment-analysis/"
+    ],
+    "relatedExperiments": [10],
+    "difficulty": "Beginner",
+    "version": "3.3+",
+    "license": "MIT"
+  },
+  {
+    "id": 13,
+    "name": "WordCloud",
+    "category": "Text Visualization",
+    "icon": "☁️",
+    "shortDescription": "Generate word clouds from text data.",
+    "description": "WordCloud is a Python library for generating word clouds from text. Word clouds are visual representations where the size of each word indicates its frequency or importance. They're useful for quickly perceiving the most prominent terms in text data.",
+    "features": [
+      "Automatic word frequency calculation",
+      "Custom shape support",
+      "Color customization",
+      "Font control",
+      "Stopword filtering",
+      "Image masking",
+      "Multiple backends"
+    ],
+    "useCases": [
+      "Text data visualization",
+      "Document summarization",
+      "Social media analysis",
+      "Survey response visualization",
+      "Content analysis",
+      "Presentation graphics"
+    ],
+    "installation": "pip install wordcloud",
+    "basicExample": "from wordcloud import WordCloud\nimport matplotlib.pyplot as plt\n\n# Create word cloud\ntext = 'data science machine learning python pandas'\nwordcloud = WordCloud(width=800, height=400,\n                      background_color='white').generate(text)\n\n# Display\nplt.figure(figsize=(10, 5))\nplt.imshow(wordcloud, interpolation='bilinear')\nplt.axis('off')\nplt.show()",
+    "resources": [
+      "GitHub Repository: https://github.com/amueller/word_cloud",
+      "Documentation: https://amueller.github.io/word_cloud/",
+      "Gallery: https://amueller.github.io/word_cloud/auto_examples/index.html",
+      "Tutorial: https://www.datacamp.com/tutorial/wordcloud-python"
+    ],
+    "relatedExperiments": [10],
+    "difficulty": "Beginner",
+    "version": "1.9+",
+    "license": "MIT"
+  },
+  {
+    "id": 14,
+    "name": "Scikit-learn",
+    "category": "Machine Learning",
+    "icon": "🤖",
+    "shortDescription": "Machine learning library for Python.",
+    "description": "Scikit-learn is a free machine learning library for Python. It features various classification, regression, and clustering algorithms including support vector machines, random forests, gradient boosting, k-means, and DBSCAN. It's designed to interoperate with NumPy and SciPy.",
+    "features": [
+      "Classification algorithms",
+      "Regression algorithms",
+      "Clustering algorithms",
+      "Dimensionality reduction",
+      "Model selection and evaluation",
+      "Preprocessing utilities",
+      "Ensemble methods"
+    ],
+    "useCases": [
+      "Predictive modeling",
+      "Classification tasks",
+      "Regression analysis",
+      "Clustering and segmentation",
+      "Feature engineering",
+      "Model evaluation",
+      "Cross-validation"
+    ],
+    "installation": "pip install scikit-learn",
+    "basicExample": "from sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error\nimport numpy as np\n\n# Sample data\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([2, 4, 6, 8, 10])\n\n# Split data\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# Train model\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# Predict\ny_pred = model.predict(X_test)\nprint('Predictions:', y_pred)\nprint('MSE:', mean_squared_error(y_test, y_pred))",
+    "resources": [
+      "Official Documentation: https://scikit-learn.org/stable/",
+      "User Guide: https://scikit-learn.org/stable/user_guide.html",
+      "Tutorials: https://scikit-learn.org/stable/tutorial/index.html",
+      "API Reference: https://scikit-learn.org/stable/modules/classes.html"
+    ],
+    "relatedExperiments": [],
+    "difficulty": "Intermediate",
+    "version": "1.3+",
+    "license": "BSD 3-Clause"
+  }
+]

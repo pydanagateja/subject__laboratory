@@ -1,0 +1,748 @@
+[
+  {
+    "id": 1,
+    "number": "01",
+    "title": "Working with Different Data Formats using Pandas",
+    "shortDescription": "Learn how to read, write and process CSV, JSON and Excel files using Pandas.",
+    "aim": "To understand and implement various file format operations using Pandas library in Python.",
+    "overview": "This experiment covers reading and writing data in different formats including CSV, JSON, and Excel files. Students will learn to use Pandas methods for efficient data import and export operations.",
+    "technologies": ["Python", "Pandas", "Data Processing"],
+    "keywords": ["pandas", "csv", "json", "excel", "data formats", "read_csv", "to_csv", "read_json", "read_excel"],
+    "video": "https://www.youtube.com/watch?v=vmEHCJofslg",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Data import and export in business analytics and data processing workflows. Essential for data scientists working with multiple data sources.",
+    "learningObjectives": [
+      "Master reading and writing CSV files",
+      "Understand JSON data parsing and manipulation",
+      "Learn Excel file operations with Pandas",
+      "Handle different data format conversions"
+    ],
+    "subExperiments": [
+      {
+        "id": "1A",
+        "title": "CSV Operations",
+        "description": "Reading and writing data in CSV/delimited text format using read_csv() and to_csv().",
+        "code": "import pandas as pd\n\n# Reading CSV file\ndf = pd.read_csv('data.csv')\nprint(\"First 5 rows:\")\nprint(df.head())\n\n# Writing to CSV\ndf.to_csv('output.csv', index=False)\nprint(\"\\nData saved to output.csv\")\n\n# Reading with custom delimiter\ndf_custom = pd.read_csv('data.txt', delimiter='\\t')\nprint(\"\\nCustom delimiter data:\")\nprint(df_custom.head())",
+        "explanation": [
+          "Import the Pandas library as 'pd'",
+          "Use read_csv() to load CSV data into a DataFrame",
+          "The head() method displays the first 5 rows",
+          "to_csv() saves the DataFrame to a new CSV file",
+          "index=False prevents saving row numbers",
+          "Custom delimiters (like tab) can be specified"
+        ],
+        "expectedOutput": "DataFrame structure with rows and columns displayed, confirmation of file creation."
+      },
+      {
+        "id": "1B",
+        "title": "JSON Operations",
+        "description": "Reading, writing and parsing JSON using read_json().",
+        "code": "import pandas as pd\nimport json\n\n# Reading JSON file\ndf = pd.read_json('data.json')\nprint(\"JSON Data:\")\nprint(df.head())\n\n# Writing to JSON\ndf.to_json('output.json', orient='records', indent=2)\nprint(\"\\nData saved to output.json\")\n\n# Reading JSON string\njson_string = '{\"name\": [\"Alice\", \"Bob\"], \"age\": [25, 30]}'\ndf_from_string = pd.read_json(json_string)\nprint(\"\\nFrom JSON string:\")\nprint(df_from_string)",
+        "explanation": [
+          "read_json() parses JSON data into a DataFrame",
+          "JSON files can have different orientations (records, columns, etc.)",
+          "to_json() exports DataFrame to JSON format",
+          "orient='records' creates a list of JSON objects",
+          "indent=2 makes the output human-readable",
+          "JSON strings can be directly converted to DataFrames"
+        ],
+        "expectedOutput": "JSON data displayed as DataFrame, confirmation of file creation with proper formatting."
+      },
+      {
+        "id": "1C",
+        "title": "Excel Operations",
+        "description": "Reading and writing Microsoft Excel files using read_excel() and to_excel().",
+        "code": "import pandas as pd\n\n# Reading Excel file\ndf = pd.read_excel('data.xlsx', sheet_name='Sheet1')\nprint(\"Excel Data:\")\nprint(df.head())\n\n# Writing to Excel\ndf.to_excel('output.xlsx', sheet_name='Results', index=False)\nprint(\"\\nData saved to output.xlsx\")\n\n# Reading multiple sheets\nxls = pd.ExcelFile('data.xlsx')\nprint(\"\\nAvailable sheets:\", xls.sheet_names)\n\n# Read all sheets into a dictionary\nall_sheets = pd.read_excel('data.xlsx', sheet_name=None)\nfor sheet_name, df_sheet in all_sheets.items():\n    print(f\"\\nSheet: {sheet_name}\")\n    print(df_sheet.head())",
+        "explanation": [
+          "read_excel() loads Excel files into DataFrames",
+          "sheet_name parameter specifies which sheet to read",
+          "to_excel() exports DataFrame to Excel format",
+          "ExcelFile() creates an Excel file object for inspection",
+          "sheet_names attribute lists all available sheets",
+          "sheet_name=None reads all sheets into a dictionary"
+        ],
+        "expectedOutput": "Excel data displayed as DataFrame, list of sheet names, data from multiple sheets."
+      }
+    ],
+    "theory": "Pandas is a powerful Python library for data manipulation and analysis. It provides robust methods for reading and writing data in various formats. CSV (Comma-Separated Values) is the most common format for tabular data. JSON (JavaScript Object Notation) is widely used for structured data exchange. Excel files (.xlsx, .xls) are popular in business environments. Understanding these format operations is fundamental for any data science workflow.",
+    "result": "Successfully demonstrated reading and writing operations for CSV, JSON, and Excel formats using Pandas library.",
+    "vivaQuestions": [
+      "What is the difference between read_csv() and read_table()?",
+      "How do you handle missing values while reading CSV files?",
+      "What are the different orient options in to_json()?",
+      "How can you read specific columns from a CSV file?",
+      "What is the purpose of the index parameter in to_csv()?",
+      "How do you read Excel files with multiple sheets?",
+      "What encoding issues might you face with CSV files?",
+      "How do you specify data types while reading CSV files?"
+    ]
+  },
+  {
+    "id": 2,
+    "number": "02",
+    "title": "Interacting with Web APIs and Databases",
+    "shortDescription": "Learn to retrieve data from Web APIs and perform database operations with Python.",
+    "aim": "To understand API interactions and database operations using Python for data extraction and manipulation.",
+    "overview": "This experiment demonstrates how to interact with RESTful APIs and relational databases. Students will learn to fetch data from GitHub API and perform CRUD operations on databases.",
+    "technologies": ["Python", "Requests", "SQL", "APIs", "Databases"],
+    "keywords": ["api", "rest", "github", "sql", "database", "crud", "requests", "json", "sqlite"],
+    "video": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Essential for data collection from web services, integrating external data sources, and managing persistent data storage in applications.",
+    "learningObjectives": [
+      "Understand RESTful API interactions",
+      "Learn HTTP request methods",
+      "Master database CRUD operations",
+      "Convert API responses to DataFrames"
+    ],
+    "subExperiments": [
+      {
+        "id": "2A",
+        "title": "GitHub API Integration",
+        "description": "Retrieve the last 30 GitHub issues for the pandas repository using Python requests.",
+        "code": "import requests\nimport pandas as pd\n\n# GitHub API endpoint\nurl = 'https://api.github.com/repos/pandas-dev/pandas/issues'\n\n# Parameters for the request\nparams = {\n    'state': 'all',\n    'per_page': 30,\n    'page': 1\n}\n\n# Make GET request\nresponse = requests.get(url, params=params)\n\n# Check if request was successful\nif response.status_code == 200:\n    issues_data = response.json()\n    \n    # Extract relevant fields\n    issues_list = []\n    for issue in issues_data:\n        issues_list.append({\n            'number': issue['number'],\n            'title': issue['title'],\n            'state': issue['state'],\n            'created_at': issue['created_at'],\n            'user': issue['user']['login']\n        })\n    \n    # Create DataFrame\n    df = pd.DataFrame(issues_list)\n    print(\"GitHub Issues:\")\n    print(df.head())\n    print(f\"\\nTotal issues retrieved: {len(df)}\")\nelse:\n    print(f\"Error: {response.status_code}\")",
+        "explanation": [
+          "Import requests library for HTTP operations",
+          "Define the GitHub API endpoint URL",
+          "Set parameters like per_page and state",
+          "Make GET request using requests.get()",
+          "Check response.status_code for success (200)",
+          "Parse JSON response using .json() method",
+          "Extract specific fields from each issue",
+          "Convert the list of dictionaries to a DataFrame"
+        ],
+        "expectedOutput": "DataFrame showing issue number, title, state, creation date, and user for 30 GitHub issues."
+      },
+      {
+        "id": "2B",
+        "title": "Database Operations",
+        "description": "Connect to SQLite database and perform CRUD operations (Create, Read, Update, Delete).",
+        "code": "import sqlite3\nimport pandas as pd\n\n# Connect to database (creates if doesn't exist)\nconn = sqlite3.connect('students.db')\ncursor = conn.cursor()\n\n# Create table\ncursor.execute('''CREATE TABLE IF NOT EXISTS students\n                  (id INTEGER PRIMARY KEY,\n                   name TEXT NOT NULL,\n                   roll_no TEXT UNIQUE,\n                   department TEXT,\n                   cgpa REAL)''')\n\n# Insert records\nstudents = [\n    ('Alice Johnson', '101', 'Data Science', 8.5),\n    ('Bob Smith', '102', 'Data Science', 7.8),\n    ('Charlie Brown', '103', 'Computer Science', 9.1)\n]\n\ncursor.executemany('INSERT INTO students (name, roll_no, department, cgpa) VALUES (?, ?, ?, ?)', students)\nconn.commit()\n\n# Select records\ndf = pd.read_sql_query('SELECT * FROM students', conn)\nprint(\"All Students:\")\nprint(df)\n\n# Update record\ncursor.execute('UPDATE students SET cgpa = ? WHERE roll_no = ?', (8.8, '101'))\nconn.commit()\nprint(\"\\nUpdated Alice's CGPA\")\n\n# Select specific records\ndf_filtered = pd.read_sql_query('SELECT * FROM students WHERE cgpa > 8.0', conn)\nprint(\"\\nStudents with CGPA > 8.0:\")\nprint(df_filtered)\n\n# Delete record\ncursor.execute('DELETE FROM students WHERE roll_no = ?', ('103',))\nconn.commit()\nprint(\"\\nDeleted Charlie's record\")\n\n# Final data\ndf_final = pd.read_sql_query('SELECT * FROM students', conn)\nprint(\"\\nFinal Student List:\")\nprint(df_final)\n\nconn.close()",
+        "explanation": [
+          "sqlite3.connect() creates/opens a database connection",
+          "cursor() object executes SQL commands",
+          "CREATE TABLE defines the table structure",
+          "INSERT adds new records to the table",
+          "executemany() inserts multiple records efficiently",
+          "commit() saves changes to the database",
+          "pd.read_sql_query() converts SQL results to DataFrame",
+          "UPDATE modifies existing records",
+          "DELETE removes records based on conditions",
+          "close() closes the database connection"
+        ],
+        "expectedOutput": "Table creation confirmation, inserted records displayed as DataFrame, updated and deleted records reflected in final output."
+      }
+    ],
+    "theory": "Web APIs (Application Programming Interfaces) allow applications to communicate over HTTP. REST APIs use standard HTTP methods (GET, POST, PUT, DELETE) to interact with resources. Databases provide persistent storage for structured data. SQL (Structured Query Language) is used for database operations. CRUD operations (Create, Read, Update, Delete) are fundamental database interactions. Python's requests library simplifies HTTP operations, while sqlite3 and SQLAlchemy facilitate database interactions.",
+    "result": "Successfully retrieved data from GitHub API and performed complete database CRUD operations with proper data conversion to Pandas DataFrames.",
+    "vivaQuestions": [
+      "What is a RESTful API?",
+      "What are the common HTTP status codes and their meanings?",
+      "What is the difference between GET and POST requests?",
+      "How do you handle API authentication?",
+      "What is SQL injection and how can you prevent it?",
+      "What is the difference between PRIMARY KEY and UNIQUE constraints?",
+      "Why do we need to commit() changes in database operations?",
+      "What is the advantage of using pandas to read SQL queries?"
+    ]
+  },
+  {
+    "id": 3,
+    "number": "03",
+    "title": "Data Cleaning and Preparation",
+    "shortDescription": "Master essential data cleaning techniques including handling missing data, duplicates, outliers, and text manipulation.",
+    "aim": "To learn and apply various data cleaning and preparation techniques for real-world datasets.",
+    "overview": "Data cleaning is crucial for accurate analysis. This experiment covers missing value treatment, duplicate removal, outlier detection, and text data manipulation using regular expressions.",
+    "technologies": ["Python", "Pandas", "NumPy", "Regex"],
+    "keywords": ["data cleaning", "missing data", "duplicates", "outliers", "regex", "text processing", "data preparation"],
+    "video": "https://www.youtube.com/watch?v=fhi4dOhmW-g",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Critical for preparing messy real-world data for analysis. Used in data preprocessing pipelines across all data science projects.",
+    "learningObjectives": [
+      "Handle missing and null values effectively",
+      "Identify and remove duplicate records",
+      "Detect and treat outliers in data",
+      "Perform text manipulation using regex"
+    ],
+    "subExperiments": [
+      {
+        "id": "3A",
+        "title": "Missing Data Handling",
+        "description": "Learn to handle missing data using isna(), dropna(), and fillna() methods, and remove duplicates.",
+        "code": "import pandas as pd\nimport numpy as np\n\n# Create sample data with missing values\ndata = {\n    'Name': ['Alice', 'Bob', None, 'David', 'Eve', 'Frank'],\n    'Age': [25, np.nan, 30, 28, np.nan, 35],\n    'Salary': [50000, 60000, np.nan, 75000, 80000, np.nan],\n    'Department': ['HR', 'IT', 'IT', None, 'HR', 'IT']\n}\n\ndf = pd.DataFrame(data)\nprint(\"Original Data:\")\nprint(df)\n\n# Check for missing values\nprint(\"\\nMissing values per column:\")\nprint(df.isna().sum())\n\n# Drop rows with any missing value\ndf_dropped = df.dropna()\nprint(\"\\nAfter dropping rows with missing values:\")\nprint(df_dropped)\n\n# Fill missing values\ndf_filled = df.copy()\ndf_filled['Age'].fillna(df['Age'].mean(), inplace=True)\ndf_filled['Salary'].fillna(df['Salary'].median(), inplace=True)\ndf_filled['Name'].fillna('Unknown', inplace=True)\ndf_filled['Department'].fillna(method='ffill', inplace=True)\n\nprint(\"\\nAfter filling missing values:\")\nprint(df_filled)\n\n# Duplicate handling\ndata_with_dupes = {\n    'ID': [1, 2, 2, 3, 4, 4],\n    'Value': [100, 200, 200, 300, 400, 400]\n}\ndf_dupes = pd.DataFrame(data_with_dupes)\nprint(\"\\nData with duplicates:\")\nprint(df_dupes)\n\nprint(\"\\nDuplicate rows:\")\nprint(df_dupes.duplicated())\n\ndf_no_dupes = df_dupes.drop_duplicates()\nprint(\"\\nAfter removing duplicates:\")\nprint(df_no_dupes)",
+        "explanation": [
+          "Create DataFrame with intentional missing values (None, np.nan)",
+          "isna() identifies missing values in the DataFrame",
+          "sum() counts total missing values per column",
+          "dropna() removes rows containing any missing value",
+          "fillna() replaces missing values with specified values",
+          "mean() and median() provide statistical fill values",
+          "method='ffill' forward-fills missing values",
+          "duplicated() identifies duplicate rows",
+          "drop_duplicates() removes duplicate entries"
+        ],
+        "expectedOutput": "Original data with missing values, count of missing values per column, cleaned data after dropping and filling missing values, duplicate detection and removal results."
+      },
+      {
+        "id": "3B",
+        "title": "Data Transformation",
+        "description": "Transform data using map(), replace(), and rename() methods.",
+        "code": "import pandas as pd\n\n# Sample data\ndata = {\n    'student_name': ['Alice', 'Bob', 'Charlie', 'David'],\n    'grade': ['A', 'B', 'A', 'C'],\n    'score': [95, 85, 92, 78]\n}\n\ndf = pd.DataFrame(data)\nprint(\"Original Data:\")\nprint(df)\n\n# Using map() to transform data\ngrade_mapping = {'A': 'Excellent', 'B': 'Good', 'C': 'Average'}\ndf['grade_description'] = df['grade'].map(grade_mapping)\nprint(\"\\nAfter mapping grades:\")\nprint(df)\n\n# Using replace() to substitute values\ndf_replaced = df.copy()\ndf_replaced['grade'] = df_replaced['grade'].replace({'A': 'A+', 'C': 'C+'})\nprint(\"\\nAfter replacing values:\")\nprint(df_replaced)\n\n# Using rename() to change column names\ndf_renamed = df.rename(columns={\n    'student_name': 'Name',\n    'grade': 'Grade',\n    'score': 'Score',\n    'grade_description': 'Performance'\n})\nprint(\"\\nAfter renaming columns:\")\nprint(df_renamed)\n\n# Transform numeric data\ndf['score_normalized'] = df['score'].apply(lambda x: x / 100)\nprint(\"\\nWith normalized scores:\")\nprint(df[['student_name', 'score', 'score_normalized']])",
+        "explanation": [
+          "map() applies a dictionary mapping to transform values",
+          "Each value in the column is replaced by its mapped value",
+          "replace() substitutes specific values with new ones",
+          "Multiple replacements can be done using a dictionary",
+          "rename() changes column names",
+          "columns parameter specifies old:new name mappings",
+          "apply() applies a custom function to each value",
+          "lambda functions provide inline transformations"
+        ],
+        "expectedOutput": "Original data, transformed data with mapped grades, replaced values, renamed columns, and normalized scores."
+      },
+      {
+        "id": "3C",
+        "title": "Outlier Detection",
+        "description": "Generate normally distributed data and detect potential outliers using statistical methods.",
+        "code": "import pandas as pd\nimport numpy as np\n\n# Generate normally distributed data\nnp.random.seed(42)\ndata = np.random.normal(100, 15, 1000)\n\n# Add some outliers\noutliers = [50, 45, 180, 175, 200]\ndata_with_outliers = np.concatenate([data, outliers])\n\ndf = pd.DataFrame(data_with_outliers, columns=['Value'])\n\nprint(\"Data Statistics:\")\nprint(df.describe())\n\n# Method 1: Using IQR (Interquartile Range)\nQ1 = df['Value'].quantile(0.25)\nQ3 = df['Value'].quantile(0.75)\nIQR = Q3 - Q1\n\nlower_bound = Q1 - 1.5 * IQR\nupper_bound = Q3 + 1.5 * IQR\n\nprint(f\"\\nIQR Method:\")\nprint(f\"Lower Bound: {lower_bound:.2f}\")\nprint(f\"Upper Bound: {upper_bound:.2f}\")\n\noutliers_iqr = df[(df['Value'] < lower_bound) | (df['Value'] > upper_bound)]\nprint(f\"\\nOutliers detected (IQR): {len(outliers_iqr)}\")\nprint(outliers_iqr.head())\n\n# Method 2: Using Z-score\nmean = df['Value'].mean()\nstd = df['Value'].std()\nz_scores = np.abs((df['Value'] - mean) / std)\n\nthreshold = 3\noutliers_zscore = df[z_scores > threshold]\nprint(f\"\\nOutliers detected (Z-score > {threshold}): {len(outliers_zscore)}\")\nprint(outliers_zscore)\n\n# Remove outliers\ndf_clean = df[(df['Value'] >= lower_bound) & (df['Value'] <= upper_bound)]\nprint(f\"\\nOriginal data points: {len(df)}\")\nprint(f\"Clean data points: {len(df_clean)}\")\nprint(f\"Outliers removed: {len(df) - len(df_clean)}\")",
+        "explanation": [
+          "np.random.normal() generates normally distributed data",
+          "Artificial outliers are added for demonstration",
+          "describe() provides statistical summary",
+          "Q1 and Q3 are 25th and 75th percentiles",
+          "IQR (Interquartile Range) = Q3 - Q1",
+          "Values beyond 1.5*IQR from Q1/Q3 are potential outliers",
+          "Z-score measures standard deviations from mean",
+          "Z-score > 3 typically indicates an outlier",
+          "Boolean indexing filters outliers"
+        ],
+        "expectedOutput": "Statistical summary, IQR bounds, detected outliers using both methods, comparison of original and cleaned data sizes."
+      },
+      {
+        "id": "3D",
+        "title": "Text Manipulation with Regex",
+        "description": "Use regular expressions to split strings and identify patterns in text data.",
+        "code": "import pandas as pd\nimport re\n\n# Sample text data with irregular spacing\ntext_data = [\n    'Alice    Smith\\t25\\nHR',\n    'Bob  Johnson  30  IT',\n    'Charlie\\tBrown\\t\\t28\\tFinance',\n    'David   Wilson    35    IT'\n]\n\nprint(\"Original text data:\")\nfor text in text_data:\n    print(repr(text))\n\n# Split by any whitespace (spaces, tabs, newlines)\nprocessed_data = []\nfor text in text_data:\n    # Split by one or more whitespace characters\n    parts = re.split(r'\\s+', text.strip())\n    processed_data.append(parts)\n\ndf = pd.DataFrame(processed_data, columns=['First Name', 'Last Name', 'Age', 'Department'])\nprint(\"\\nProcessed DataFrame:\")\nprint(df)\n\n# Pattern matching examples\nemail_data = [\n    'Contact: john.doe@company.com for info',\n    'Email alice.smith@email.org for details',\n    'Reach out to bob@test.com',\n    'No email in this string'\n]\n\nprint(\"\\nEmail Extraction:\")\nemail_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'\n\nfor text in email_data:\n    emails = re.findall(email_pattern, text)\n    if emails:\n        print(f\"Text: {text}\")\n        print(f\"Found: {emails[0]}\\n\")\n    else:\n        print(f\"Text: {text}\")\n        print(\"Found: No email\\n\")\n\n# Phone number pattern\nphone_data = ['Call 123-456-7890', 'Phone: (555) 123-4567', 'No phone here']\nphone_pattern = r'\\d{3}[-.]?\\d{3}[-.]?\\d{4}|\\(\\d{3}\\)\\s*\\d{3}[-.]?\\d{4}'\n\nprint(\"Phone Number Extraction:\")\nfor text in phone_data:\n    phones = re.findall(phone_pattern, text)\n    print(f\"Text: {text}\")\n    print(f\"Found: {phones if phones else 'No phone'}\\n\")",
+        "explanation": [
+          "Regular expressions (regex) match patterns in text",
+          "\\s+ matches one or more whitespace characters",
+          "re.split() splits text based on regex pattern",
+          "strip() removes leading/trailing whitespace",
+          "[a-zA-Z0-9._%+-]+ matches email username part",
+          "@[a-zA-Z0-9.-]+ matches domain name",
+          "\\.[a-zA-Z]{2,} matches domain extension",
+          "re.findall() finds all pattern matches",
+          "? makes preceding character optional",
+          "\\d matches any digit"
+        ],
+        "expectedOutput": "Original text with visible whitespace characters, cleaned DataFrame with properly split columns, extracted email addresses and phone numbers from text."
+      }
+    ],
+    "theory": "Data cleaning is a critical preprocessing step that involves identifying and correcting errors, handling missing values, removing duplicates, and detecting outliers. Missing data can be handled by deletion (listwise/pairwise) or imputation (mean, median, mode, forward-fill, backward-fill). Outliers are extreme values that differ significantly from other observations. Common detection methods include IQR (Interquartile Range), Z-score, and visual methods. Regular expressions provide powerful pattern matching for text processing. Data transformation prepares data for analysis by normalizing, standardizing, or converting to appropriate formats.",
+    "result": "Successfully implemented comprehensive data cleaning techniques including missing value treatment, duplicate removal, outlier detection, data transformation, and text manipulation using regular expressions.",
+    "vivaQuestions": [
+      "What is the difference between dropna() and fillna()?",
+      "When should you use mean vs median for filling missing values?",
+      "What is the IQR method for outlier detection?",
+      "What is a Z-score and how is it used?",
+      "What does the regex pattern \\s+ match?",
+      "What is forward fill (ffill) and when is it useful?",
+      "How do duplicated() and drop_duplicates() differ?",
+      "Why is data cleaning important in the data science workflow?"
+    ]
+  },
+  {
+    "id": 4,
+    "number": "04",
+    "title": "Data Wrangling: Join, Combine, and Reshape",
+    "shortDescription": "Learn advanced data manipulation techniques including hierarchical indexing, stacking/unstacking, and merging DataFrames.",
+    "aim": "To master data wrangling operations for combining and reshaping data from multiple sources.",
+    "overview": "Data wrangling involves transforming and mapping raw data into more useful formats. This experiment covers hierarchical indexing, pivot operations, and various methods to combine DataFrames.",
+    "technologies": ["Python", "Pandas", "Data Manipulation"],
+    "keywords": ["hierarchical index", "multiindex", "stack", "unstack", "merge", "join", "combine", "pivot"],
+    "video": "https://www.youtube.com/watch?v=iYie42M1ZyU",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Essential for combining data from multiple sources, reshaping data for analysis, and handling complex hierarchical data structures in business intelligence and data analytics.",
+    "learningObjectives": [
+      "Understand hierarchical indexing concepts",
+      "Master stack and unstack operations",
+      "Learn different merge and join strategies",
+      "Apply combine_first for data integration"
+    ],
+    "subExperiments": [
+      {
+        "id": "4A",
+        "title": "Hierarchical Indexing",
+        "description": "Work with Series having multiple levels of indexes and perform outer-level, inner-level, and partial indexing.",
+        "code": "import pandas as pd\nimport numpy as np\n\n# Create a Series with MultiIndex\nindex = pd.MultiIndex.from_tuples([\n    ('California', 'San Francisco'),\n    ('California', 'Los Angeles'),\n    ('California', 'San Diego'),\n    ('Texas', 'Houston'),\n    ('Texas', 'Dallas'),\n    ('Texas', 'Austin'),\n    ('New York', 'New York City'),\n    ('New York', 'Buffalo')\n], names=['State', 'City'])\n\npopulation = pd.Series([881549, 3979576, 1423851, 2320268, 1343573, 978908, 8336817, 255284], index=index)\n\nprint(\"Hierarchical Series:\")\nprint(population)\nprint(f\"\\nIndex names: {population.index.names}\")\n\n# Outer-level selection\nprint(\"\\nCalifornia cities (outer-level selection):\")\nprint(population['California'])\n\n# Inner-level selection using loc\nprint(\"\\nHouston population (inner-level selection):\")\nprint(population.loc['Texas', 'Houston'])\n\n# Partial indexing\nprint(\"\\nTexas cities (partial indexing):\")\nprint(population['Texas'])\n\n# Convert to DataFrame\ndf = population.unstack()\nprint(\"\\nUnstacked to DataFrame:\")\nprint(df)\n\n# Cross-section (all cities named Houston across states)\nprint(\"\\nStatistics by state:\")\nprint(population.groupby(level='State').agg(['mean', 'sum']))",
+        "explanation": [
+          "MultiIndex creates hierarchical row labels",
+          "from_tuples() creates index from tuple list",
+          "names parameter labels each index level",
+          "Outer-level selection uses single bracket notation",
+          "Inner-level selection requires loc with both levels",
+          "Partial indexing selects all data for one index level",
+          "unstack() converts hierarchical index to columns",
+          "groupby(level=) aggregates by specific index level"
+        ],
+        "expectedOutput": "Hierarchical Series with state and city levels, selections at different levels, unstacked DataFrame, and aggregated statistics."
+      },
+      {
+        "id": "4B",
+        "title": "Stack and Unstack Operations",
+        "description": "Rearrange hierarchical tabular data using stack() and unstack() methods.",
+        "code": "import pandas as pd\nimport numpy as np\n\n# Create a DataFrame with hierarchical columns\ndata = {\n    ('Sales', 'Q1'): [100, 150, 200],\n    ('Sales', 'Q2'): [120, 160, 210],\n    ('Profit', 'Q1'): [20, 30, 40],\n    ('Profit', 'Q2'): [25, 35, 45]\n}\n\ndf = pd.DataFrame(data, index=['Product A', 'Product B', 'Product C'])\ndf.columns.names = ['Metric', 'Quarter']\n\nprint(\"Original DataFrame with hierarchical columns:\")\nprint(df)\nprint()\n\n# Stack: Pivot columns to rows (innermost level by default)\nstacked = df.stack()\nprint(\"After stacking (columns to rows):\")\nprint(stacked)\nprint(f\"Shape: {stacked.shape}\")\nprint()\n\n# Unstack: Pivot rows to columns\nunstacked = stacked.unstack()\nprint(\"After unstacking (back to original):\")\nprint(unstacked)\nprint()\n\n# Unstack different level\nunstacked_level0 = stacked.unstack(level=0)\nprint(\"Unstacking level 0 (Product):\")\nprint(unstacked_level0)\nprint()\n\n# Another example with single column hierarchy\ndata2 = pd.DataFrame({\n    'value': [1, 2, 3, 4, 5, 6]\n}, index=pd.MultiIndex.from_tuples([\n    ('A', 'X'), ('A', 'Y'), ('A', 'Z'),\n    ('B', 'X'), ('B', 'Y'), ('B', 'Z')\n], names=['letter', 'number']))\n\nprint(\"DataFrame with MultiIndex rows:\")\nprint(data2)\nprint()\n\nunstacked2 = data2.unstack()\nprint(\"After unstacking:\")\nprint(unstacked2)\nprint()\n\nstacked2 = unstacked2.stack()\nprint(\"After stacking back:\")\nprint(stacked2)",
+        "explanation": [
+          "stack() moves column level to row index (wide to long)",
+          "Creates hierarchical index from column labels",
+          "unstack() moves row index level to columns (long to wide)",
+          "Default unstacks the innermost level",
+          "level parameter specifies which level to unstack",
+          "Stack and unstack are inverse operations",
+          "Useful for reshaping data for different analyses",
+          "Changes DataFrame shape and structure"
+        ],
+        "expectedOutput": "Original wide-format DataFrame, stacked long-format version, unstacked transformations at different levels, demonstration of inverse operations."
+      },
+      {
+        "id": "4C",
+        "title": "Merging and Combining DataFrames",
+        "description": "Create and merge DataFrames using index-based merging, handle overlapping data, and use combine_first().",
+        "code": "import pandas as pd\nimport numpy as np\n\n# Create first DataFrame\ndf1 = pd.DataFrame({\n    'employee_id': [101, 102, 103, 104],\n    'name': ['Alice', 'Bob', 'Charlie', 'David'],\n    'department': ['HR', 'IT', 'Finance', 'IT']\n})\n\nprint(\"DataFrame 1 (Employee Info):\")\nprint(df1)\nprint()\n\n# Create second DataFrame\ndf2 = pd.DataFrame({\n    'employee_id': [101, 102, 105, 106],\n    'salary': [50000, 60000, 55000, 65000],\n    'years_exp': [3, 5, 2, 7]\n})\n\nprint(\"DataFrame 2 (Salary Info):\")\nprint(df2)\nprint()\n\n# Inner merge (only matching keys)\nmerged_inner = pd.merge(df1, df2, on='employee_id', how='inner')\nprint(\"Inner merge (only common employees):\")\nprint(merged_inner)\nprint()\n\n# Left merge (all from left, matching from right)\nmerged_left = pd.merge(df1, df2, on='employee_id', how='left')\nprint(\"Left merge (all from df1):\")\nprint(merged_left)\nprint()\n\n# Outer merge (all from both)\nmerged_outer = pd.merge(df1, df2, on='employee_id', how='outer')\nprint(\"Outer merge (all employees):\")\nprint(merged_outer)\nprint()\n\n# Merge using index\ndf1_indexed = df1.set_index('employee_id')\ndf2_indexed = df2.set_index('employee_id')\n\nmerged_index = pd.merge(df1_indexed, df2_indexed, left_index=True, right_index=True, how='inner')\nprint(\"Merge using index:\")\nprint(merged_index)\nprint()\n\n# Handling overlapping data with combine_first\ndf_a = pd.DataFrame({\n    'A': [1, np.nan, 3, np.nan],\n    'B': [4, 5, np.nan, 7]\n}, index=['a', 'b', 'c', 'd'])\n\ndf_b = pd.DataFrame({\n    'A': [10, 20, 30, 40],\n    'B': [np.nan, 50, 60, np.nan],\n    'C': [100, 200, 300, 400]\n}, index=['a', 'b', 'c', 'd'])\n\nprint(\"DataFrame A (with missing values):\")\nprint(df_a)\nprint()\n\nprint(\"DataFrame B (with missing values):\")\nprint(df_b)\nprint()\n\ncombined = df_a.combine_first(df_b)\nprint(\"After combine_first (A takes priority, B fills gaps):\")\nprint(combined)\nprint()\n\n# Join operation (index-based)\njoined = df_a.join(df_b, how='outer', lsuffix='_left', rsuffix='_right')\nprint(\"Join operation with suffix for overlapping columns:\")\nprint(joined)",
+        "explanation": [
+          "pd.merge() combines DataFrames based on common columns",
+          "on parameter specifies the merge key column",
+          "how='inner' keeps only matching rows",
+          "how='left' keeps all left DataFrame rows",
+          "how='outer' keeps all rows from both DataFrames",
+          "left_index=True merges on left DataFrame's index",
+          "combine_first() fills missing values from second DataFrame",
+          "Priority goes to the calling DataFrame",
+          "join() is index-based merge operation",
+          "lsuffix and rsuffix handle overlapping column names"
+        ],
+        "expectedOutput": "Two original DataFrames, inner merge result, left merge result, outer merge result, index-based merge, combine_first example with missing values filled, and join operation with suffixes."
+      }
+    ],
+    "theory": "Data wrangling is the process of transforming and mapping raw data into a more useful format. Hierarchical indexing (MultiIndex) enables multiple index levels on an axis, allowing higher-dimensional data in lower-dimensional structures. Stack and unstack operations reshape data between wide and long formats. Merging combines DataFrames using common columns or indexes. Types of merges include inner (intersection), left (all from left), right (all from right), and outer (union). The combine_first() method patches missing values from one DataFrame with values from another. Understanding these operations is essential for preparing data from multiple sources for analysis.",
+    "result": "Successfully demonstrated hierarchical indexing, stack/unstack operations for data reshaping, and various merge strategies for combining DataFrames including handling of overlapping data.",
+    "vivaQuestions": [
+      "What is a MultiIndex in Pandas?",
+      "What is the difference between stack() and unstack()?",
+      "Explain the different types of merge operations.",
+      "When would you use left merge vs outer merge?",
+      "What does combine_first() do?",
+      "What is the difference between merge() and join()?",
+      "How do you handle overlapping column names in merge?",
+      "What is the purpose of hierarchical indexing?"
+    ]
+  },
+  {
+    "id": 5,
+    "number": "05",
+    "title": "Data Visualization with Matplotlib and Seaborn",
+    "shortDescription": "Master data visualization techniques using Matplotlib and Seaborn for effective data communication.",
+    "aim": "To learn various visualization techniques for exploring and communicating data insights effectively.",
+    "overview": "Visualization is crucial for understanding data patterns and communicating insights. This experiment covers line plots, bar charts, histograms, scatter plots, and box plots using Matplotlib and Seaborn.",
+    "technologies": ["Python", "Matplotlib", "Seaborn", "Data Visualization"],
+    "keywords": ["matplotlib", "seaborn", "line plot", "bar chart", "histogram", "scatter plot", "box plot", "visualization"],
+    "video": "https://www.youtube.com/watch?v=3Xc3CA655Y4",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Essential for exploratory data analysis, reporting, dashboards, and presenting insights to stakeholders. Used in business intelligence, research publications, and data journalism.",
+    "learningObjectives": [
+      "Create and customize line plots",
+      "Design effective bar charts and grouped visualizations",
+      "Understand distribution through histograms and density plots",
+      "Analyze relationships using scatter plots",
+      "Visualize categorical data with box plots"
+    ],
+    "subExperiments": [
+      {
+        "id": "5A",
+        "title": "Line Plots",
+        "description": "Create line plots with titles, axis labels, ticks, annotations, subplots, and save to file.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\n\n# Sample data\nmonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']\nsales = [45000, 52000, 48000, 61000, 67000, 71000]\nexpenses = [35000, 38000, 36000, 42000, 45000, 48000]\n\n# Create figure and axis\nplt.figure(figsize=(10, 6))\n\n# Plot lines\nplt.plot(months, sales, marker='o', linewidth=2, label='Sales', color='green')\nplt.plot(months, expenses, marker='s', linewidth=2, label='Expenses', color='red')\n\n# Add title and labels\nplt.title('Monthly Sales vs Expenses', fontsize=16, fontweight='bold')\nplt.xlabel('Month', fontsize=12)\nplt.ylabel('Amount ($)', fontsize=12)\n\n# Customize ticks\nplt.xticks(rotation=45)\nplt.yticks(range(30000, 80000, 10000))\n\n# Add grid\nplt.grid(True, alpha=0.3, linestyle='--')\n\n# Add legend\nplt.legend(loc='upper left', fontsize=10)\n\n# Add annotation\nmax_sales_idx = sales.index(max(sales))\nplt.annotate(f'Peak Sales: ${max(sales)}', \n             xy=(max_sales_idx, max(sales)),\n             xytext=(max_sales_idx-0.5, max(sales)+5000),\n             arrowprops=dict(arrowstyle='->', color='black'),\n             fontsize=10)\n\nplt.tight_layout()\n\n# Save to file\nplt.savefig('line_plot.png', dpi=300, bbox_inches='tight')\nprint(\"Plot saved as 'line_plot.png'\")\n\nplt.show()\n\n# Subplots example\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))\n\n# First subplot\nax1.plot(months, sales, marker='o', color='blue')\nax1.set_title('Sales Trend')\nax1.set_xlabel('Month')\nax1.set_ylabel('Sales ($)')\nax1.grid(True, alpha=0.3)\n\n# Second subplot\nax2.plot(months, expenses, marker='s', color='orange')\nax2.set_title('Expenses Trend')\nax2.set_xlabel('Month')\nax2.set_ylabel('Expenses ($)')\nax2.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.savefig('subplots.png', dpi=300)\nprint(\"Subplots saved as 'subplots.png'\")\nplt.show()",
+        "explanation": [
+          "plt.figure() creates a new figure with specified size",
+          "plot() creates line plots with markers and colors",
+          "marker parameter adds data point markers",
+          "title(), xlabel(), ylabel() add descriptive text",
+          "xticks() and yticks() customize axis tick marks",
+          "grid() adds background grid for readability",
+          "legend() displays line labels",
+          "annotate() adds text annotations with arrows",
+          "tight_layout() prevents label overlap",
+          "savefig() exports plot to file",
+          "subplots() creates multiple plots in one figure"
+        ],
+        "expectedOutput": "Line plot showing sales vs expenses with all customizations, annotations, and two separate subplot figures saved as PNG files."
+      },
+      {
+        "id": "5B",
+        "title": "Bar Plots",
+        "description": "Create bar plots including Series bar plots, DataFrame bar plots, grouped bar plots, and stacked bar plots.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\n\n# Series bar plot\ncategories = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E']\nvalues = [45, 67, 89, 52, 73]\n\nplt.figure(figsize=(10, 6))\nplt.bar(categories, values, color='steelblue', edgecolor='black')\nplt.title('Product Sales', fontsize=14, fontweight='bold')\nplt.xlabel('Products')\nplt.ylabel('Sales (Units)')\nplt.xticks(rotation=45)\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('simple_bar.png', dpi=300)\nplt.show()\n\n# DataFrame bar plot\ndata = pd.DataFrame({\n    'Quarter 1': [23, 45, 56, 34],\n    'Quarter 2': [35, 52, 61, 42],\n    'Quarter 3': [41, 58, 68, 48],\n    'Quarter 4': [48, 65, 75, 55]\n}, index=['North', 'South', 'East', 'West'])\n\nprint(\"Sales by Region:\")\nprint(data)\n\n# Grouped bar plot\nax = data.plot(kind='bar', figsize=(12, 6), width=0.8)\nplt.title('Quarterly Sales by Region (Grouped)', fontsize=14, fontweight='bold')\nplt.xlabel('Region')\nplt.ylabel('Sales (thousands)')\nplt.xticks(rotation=45)\nplt.legend(title='Quarter', bbox_to_anchor=(1.05, 1))\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('grouped_bar.png', dpi=300)\nplt.show()\n\n# Stacked bar plot\nax = data.plot(kind='bar', stacked=True, figsize=(12, 6), \n               colormap='viridis')\nplt.title('Quarterly Sales by Region (Stacked)', fontsize=14, fontweight='bold')\nplt.xlabel('Region')\nplt.ylabel('Total Sales (thousands)')\nplt.xticks(rotation=45)\nplt.legend(title='Quarter', bbox_to_anchor=(1.05, 1))\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('stacked_bar.png', dpi=300)\nplt.show()\n\n# Horizontal bar plot\nplt.figure(figsize=(10, 6))\nplt.barh(categories, values, color='coral', edgecolor='black')\nplt.title('Product Sales (Horizontal)', fontsize=14, fontweight='bold')\nplt.xlabel('Sales (Units)')\nplt.ylabel('Products')\nplt.grid(axis='x', alpha=0.3)\nplt.tight_layout()\nplt.savefig('horizontal_bar.png', dpi=300)\nplt.show()\n\nprint(\"All bar plots saved successfully!\")",
+        "explanation": [
+          "plt.bar() creates vertical bar chart",
+          "color parameter sets bar colors",
+          "edgecolor adds border to bars",
+          "DataFrame.plot(kind='bar') creates bar chart from DataFrame",
+          "Grouped bars show multiple series side by side",
+          "stacked=True creates stacked bar chart",
+          "colormap applies color scheme",
+          "plt.barh() creates horizontal bar chart",
+          "bbox_to_anchor positions legend outside plot",
+          "rotation parameter rotates axis labels"
+        ],
+        "expectedOutput": "Multiple bar chart visualizations: simple bar chart, grouped bar chart showing quarterly comparison, stacked bar chart showing cumulative totals, and horizontal bar chart. All saved as PNG files."
+      },
+      {
+        "id": "5C",
+        "title": "Histogram and Density Plot",
+        "description": "Create histograms and density plots to visualize data distributions.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\n# Generate sample data\nnp.random.seed(42)\ndata1 = np.random.normal(100, 15, 1000)\ndata2 = np.random.normal(120, 20, 1000)\n\n# Histogram\nplt.figure(figsize=(12, 5))\n\nplt.subplot(1, 2, 1)\nplt.hist(data1, bins=30, color='skyblue', edgecolor='black', alpha=0.7)\nplt.title('Distribution of Dataset 1', fontsize=12, fontweight='bold')\nplt.xlabel('Value')\nplt.ylabel('Frequency')\nplt.grid(axis='y', alpha=0.3)\n\nplt.subplot(1, 2, 2)\nplt.hist(data2, bins=30, color='lightcoral', edgecolor='black', alpha=0.7)\nplt.title('Distribution of Dataset 2', fontsize=12, fontweight='bold')\nplt.xlabel('Value')\nplt.ylabel('Frequency')\nplt.grid(axis='y', alpha=0.3)\n\nplt.tight_layout()\nplt.savefig('histograms.png', dpi=300)\nplt.show()\n\n# Overlapping histograms\nplt.figure(figsize=(10, 6))\nplt.hist(data1, bins=30, alpha=0.5, label='Dataset 1', color='blue', edgecolor='black')\nplt.hist(data2, bins=30, alpha=0.5, label='Dataset 2', color='red', edgecolor='black')\nplt.title('Overlapping Distributions', fontsize=14, fontweight='bold')\nplt.xlabel('Value')\nplt.ylabel('Frequency')\nplt.legend()\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('overlapping_hist.png', dpi=300)\nplt.show()\n\n# Density plot using Seaborn\nplt.figure(figsize=(10, 6))\nsns.kdeplot(data1, fill=True, color='blue', alpha=0.5, label='Dataset 1')\nsns.kdeplot(data2, fill=True, color='red', alpha=0.5, label='Dataset 2')\nplt.title('Density Plot Comparison', fontsize=14, fontweight='bold')\nplt.xlabel('Value')\nplt.ylabel('Density')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig('density_plot.png', dpi=300)\nplt.show()\n\n# Combined histogram and density plot\nfig, ax = plt.subplots(figsize=(10, 6))\nax.hist(data1, bins=30, density=True, alpha=0.6, color='skyblue', edgecolor='black')\nsns.kdeplot(data1, ax=ax, color='darkblue', linewidth=2)\nplt.title('Histogram with Density Curve', fontsize=14, fontweight='bold')\nplt.xlabel('Value')\nplt.ylabel('Density')\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig('hist_density_combined.png', dpi=300)\nplt.show()\n\nprint(\"Statistical summary:\")\nprint(f\"Dataset 1 - Mean: {np.mean(data1):.2f}, Std: {np.std(data1):.2f}\")\nprint(f\"Dataset 2 - Mean: {np.mean(data2):.2f}, Std: {np.std(data2):.2f}\")\nprint(\"\\nAll plots saved successfully!\")",
+        "explanation": [
+          "plt.hist() creates histogram of data distribution",
+          "bins parameter controls number of bars",
+          "alpha controls transparency (0-1)",
+          "edgecolor adds border to bars",
+          "Overlapping histograms compare distributions",
+          "sns.kdeplot() creates smooth density curve",
+          "fill=True fills area under curve",
+          "density=True in hist normalizes to density",
+          "Combined plot shows both histogram and density",
+          "Statistical measures complement visual analysis"
+        ],
+        "expectedOutput": "Multiple distribution visualizations: side-by-side histograms, overlapping histograms, separate density plots, and combined histogram with density curve. Statistical summaries of both datasets."
+      },
+      {
+        "id": "5D",
+        "title": "Scatter Plot",
+        "description": "Create scatter plots to visualize relationships between two continuous variables.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\n# Generate sample data\nnp.random.seed(42)\nn_points = 100\n\nx = np.random.rand(n_points) * 100\ny = 2.5 * x + np.random.randn(n_points) * 20 + 10\ncategories = np.random.choice(['A', 'B', 'C'], n_points)\nsizes = np.random.rand(n_points) * 200\n\n# Simple scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(x, y, alpha=0.6, color='steelblue', edgecolors='black', s=50)\nplt.title('Relationship Between X and Y', fontsize=14, fontweight='bold')\nplt.xlabel('X Variable')\nplt.ylabel('Y Variable')\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig('simple_scatter.png', dpi=300)\nplt.show()\n\n# Scatter with regression line\nplt.figure(figsize=(10, 6))\nplt.scatter(x, y, alpha=0.6, color='steelblue', edgecolors='black', s=50)\n\n# Add regression line\nz = np.polyfit(x, y, 1)\np = np.poly1d(z)\nplt.plot(x, p(x), \"r--\", linewidth=2, label=f'y={z[0]:.2f}x+{z[1]:.2f}')\n\nplt.title('Scatter Plot with Regression Line', fontsize=14, fontweight='bold')\nplt.xlabel('X Variable')\nplt.ylabel('Y Variable')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig('scatter_regression.png', dpi=300)\nplt.show()\n\n# Colored by category\ndf = pd.DataFrame({'X': x, 'Y': y, 'Category': categories, 'Size': sizes})\n\nplt.figure(figsize=(10, 6))\nfor category in ['A', 'B', 'C']:\n    mask = df['Category'] == category\n    plt.scatter(df[mask]['X'], df[mask]['Y'], label=f'Category {category}', \n                alpha=0.6, edgecolors='black', s=70)\n\nplt.title('Scatter Plot Colored by Category', fontsize=14, fontweight='bold')\nplt.xlabel('X Variable')\nplt.ylabel('Y Variable')\nplt.legend()\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig('scatter_colored.png', dpi=300)\nplt.show()\n\n# Bubble chart (size variation)\nplt.figure(figsize=(10, 6))\nscatter = plt.scatter(x, y, c=categories.astype('category').cat.codes, \n                      s=sizes, alpha=0.6, cmap='viridis', edgecolors='black')\nplt.colorbar(scatter, label='Category Code')\nplt.title('Bubble Chart (Size and Color Variation)', fontsize=14, fontweight='bold')\nplt.xlabel('X Variable')\nplt.ylabel('Y Variable')\nplt.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.savefig('bubble_chart.png', dpi=300)\nplt.show()\n\n# Calculate correlation\ncorrelation = np.corrcoef(x, y)[0, 1]\nprint(f\"Correlation coefficient: {correlation:.3f}\")\nprint(\"All scatter plots saved successfully!\")",
+        "explanation": [
+          "plt.scatter() creates scatter plot",
+          "s parameter controls point size",
+          "alpha controls transparency",
+          "edgecolors adds border to points",
+          "np.polyfit() calculates regression line",
+          "np.poly1d() creates polynomial function",
+          "Color mapping shows categorical differences",
+          "Bubble charts use size for third dimension",
+          "cmap applies color scheme",
+          "Correlation coefficient measures relationship strength",
+          "Values near 1 or -1 indicate strong correlation"
+        ],
+        "expectedOutput": "Multiple scatter plot variations: simple scatter, scatter with regression line, color-coded by category, and bubble chart with size variation. Correlation coefficient calculated and displayed."
+      },
+      {
+        "id": "5E",
+        "title": "Box Plot",
+        "description": "Create box plots for categorical data visualization and outlier detection.",
+        "code": "import matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\n# Generate sample data\nnp.random.seed(42)\ndata = {\n    'Product A': np.random.normal(75, 10, 100),\n    'Product B': np.random.normal(82, 12, 100),\n    'Product C': np.random.normal(68, 8, 100),\n    'Product D': np.random.normal(90, 15, 100)\n}\n\ndf = pd.DataFrame(data)\n\nprint(\"Summary Statistics:\")\nprint(df.describe())\nprint()\n\n# Simple box plot\nplt.figure(figsize=(10, 6))\nplt.boxplot([df['Product A'], df['Product B'], df['Product C'], df['Product D']],\n             labels=['Product A', 'Product B', 'Product C', 'Product D'],\n             patch_artist=True)\nplt.title('Sales Distribution by Product', fontsize=14, fontweight='bold')\nplt.ylabel('Sales Value')\nplt.xlabel('Products')\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('simple_boxplot.png', dpi=300)\nplt.show()\n\n# Seaborn box plot (more customization)\nplt.figure(figsize=(10, 6))\ndf_melted = df.melt(var_name='Product', value_name='Sales')\nsns.boxplot(data=df_melted, x='Product', y='Sales', palette='Set2')\nplt.title('Sales Distribution by Product (Seaborn)', fontsize=14, fontweight='bold')\nplt.ylabel('Sales Value')\nplt.xlabel('Products')\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('seaborn_boxplot.png', dpi=300)\nplt.show()\n\n# Horizontal box plot\nplt.figure(figsize=(10, 6))\nsns.boxplot(data=df_melted, y='Product', x='Sales', palette='coolwarm', orient='h')\nplt.title('Sales Distribution (Horizontal)', fontsize=14, fontweight='bold')\nplt.xlabel('Sales Value')\nplt.ylabel('Products')\nplt.grid(axis='x', alpha=0.3)\nplt.tight_layout()\nplt.savefig('horizontal_boxplot.png', dpi=300)\nplt.show()\n\n# Box plot with individual data points\nplt.figure(figsize=(10, 6))\nsns.boxplot(data=df_melted, x='Product', y='Sales', palette='pastel')\nsns.stripplot(data=df_melted, x='Product', y='Sales', \n              color='black', alpha=0.3, size=3)\nplt.title('Box Plot with Data Points', fontsize=14, fontweight='bold')\nplt.ylabel('Sales Value')\nplt.xlabel('Products')\nplt.grid(axis='y', alpha=0.3)\nplt.tight_layout()\nplt.savefig('boxplot_with_points.png', dpi=300)\nplt.show()\n\n# Identify outliers\nfor column in df.columns:\n    Q1 = df[column].quantile(0.25)\n    Q3 = df[column].quantile(0.75)\n    IQR = Q3 - Q1\n    lower_bound = Q1 - 1.5 * IQR\n    upper_bound = Q3 + 1.5 * IQR\n    outliers = df[column][(df[column] < lower_bound) | (df[column] > upper_bound)]\n    print(f\"{column}: {len(outliers)} outliers detected\")\n\nprint(\"\\nAll box plots saved successfully!\")",
+        "explanation": [
+          "plt.boxplot() creates box and whisker plot",
+          "Box shows quartiles (Q1, median, Q3)",
+          "Whiskers extend to 1.5*IQR from quartiles",
+          "Points beyond whiskers are potential outliers",
+          "patch_artist=True enables color filling",
+          "melt() reshapes wide data to long format",
+          "sns.boxplot() provides enhanced styling",
+          "orient='h' creates horizontal boxes",
+          "stripplot() adds individual data points",
+          "IQR method identifies statistical outliers",
+          "Useful for comparing distributions across categories"
+        ],
+        "expectedOutput": "Multiple box plot visualizations: simple box plot, styled Seaborn version, horizontal orientation, box plot with individual points overlay. Summary statistics and outlier counts for each product."
+      }
+    ],
+    "theory": "Data visualization is the graphical representation of information and data. It helps identify patterns, trends, and outliers in data. Line plots show trends over time. Bar charts compare categorical data. Histograms display frequency distributions of continuous data. Density plots show probability distribution. Scatter plots reveal relationships between variables. Box plots summarize distribution using quartiles and identify outliers. Matplotlib provides low-level control while Seaborn offers high-level statistical visualizations. Effective visualization requires appropriate chart selection, clear labeling, proper scaling, and consideration of color, contrast, and accessibility.",
+    "result": "Successfully created comprehensive visualizations using Matplotlib and Seaborn including line plots, bar charts, histograms, density plots, scatter plots, and box plots with proper customization and styling.",
+    "vivaQuestions": [
+      "What is the difference between Matplotlib and Seaborn?",
+      "When should you use a line plot vs a scatter plot?",
+      "What information does a box plot convey?",
+      "How do you interpret a histogram?",
+      "What does correlation in a scatter plot indicate?",
+      "What is the purpose of a density plot?",
+      "When would you use a stacked bar chart?",
+      "What are the quartiles in a box plot?",
+      "How do you save a plot to a file?",
+      "What is the purpose of subplots?"
+    ]
+  },
+  {
+    "id": 6,
+    "number": "06",
+    "title": "Time Series Analysis",
+    "shortDescription": "Learn to work with time-indexed data, time zones, periods, and resampling operations.",
+    "aim": "To understand and implement time series analysis techniques using Pandas datetime functionality.",
+    "overview": "Time series data is ubiquitous in business, finance, and science. This experiment covers creating time series objects, working with time zones, period arithmetic, frequency conversion, and resampling operations.",
+    "technologies": ["Python", "Pandas", "DateTime", "Time Series"],
+    "keywords": ["time series", "datetime", "timezone", "period", "resampling", "frequency", "date_range"],
+    "video": "https://www.youtube.com/watch?v=UFuo7EHI8zc",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Critical for financial analysis, stock trading, weather forecasting, IoT sensor data analysis, and any domain involving temporal patterns.",
+    "learningObjectives": [
+      "Create and manipulate time series data",
+      "Work with time zones and conversions",
+      "Perform period arithmetic",
+      "Convert between frequencies",
+      "Apply resampling techniques"
+    ],
+    "subExperiments": [
+      {
+        "id": "6A",
+        "title": "Create Time Series with Datetime Objects",
+        "description": "Create time series using datetime objects in pandas indexed by timestamps.",
+        "code": "import pandas as pd\n\n# Create datetime objects\ndates = pd.to_datetime([\n    '2026-01-01',\n    '2026-01-02',\n    '2026-01-03',\n    '2026-01-04',\n    '2026-01-05'\n])\n\n# Create data\ntemperature = [28, 30, 29, 31, 32]\n\n# Create time series with timestamps as index\ntime_series = pd.Series(\n    temperature,\n    index=dates\n)\n\n# Display the time series\nprint(\"Time Series:\")\nprint(time_series)\nprint(\"\\nIndex type:\", type(time_series.index))\nprint(\"Data type:\", time_series.dtype)",
+        "explanation": [
+          "pd.to_datetime() converts string dates to datetime objects",
+          "Creates a list of temperature values",
+          "pd.Series() creates a time series with dates as index",
+          "The index consists of Timestamp objects",
+          "Values represent temperature on each date",
+          "Time series allows date-based indexing and operations"
+        ],
+        "expectedOutput": "Time Series with DatetimeIndex showing dates and corresponding temperature values."
+      },
+      {
+        "id": "6B",
+        "title": "Generate DatetimeIndex with date_range",
+        "description": "Use pandas.date_range to generate a DatetimeIndex with an indicated length.",
+        "code": "import pandas as pd\nimport numpy as np\n\n# Generate a DatetimeIndex with 7 dates\ndate_index = pd.date_range(\n    start='2026-01-01',\n    periods=7,\n    freq='D'\n)\n\nprint(\"Generated DatetimeIndex:\")\nprint(date_index)\nprint(\"\\nFrequency:\", date_index.freq)\n\n# Create a time series with this index\nrng = pd.date_range('2023-01-01', periods=6, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nprint(\"\\nTime Series with random data:\")\nprint(ts)\n\n# Different frequencies\nprint(\"\\nHourly for 12 hours:\")\nhourly = pd.date_range('2026-01-01', periods=12, freq='H')\nprint(hourly)\n\nprint(\"\\nMonthly for 6 months:\")\nmonthly = pd.date_range('2026-01-01', periods=6, freq='M')\nprint(monthly)",
+        "explanation": [
+          "date_range() generates sequence of dates",
+          "start parameter specifies starting date",
+          "periods specifies number of timestamps",
+          "freq='D' generates daily frequency",
+          "freq='H' generates hourly timestamps",
+          "freq='M' generates monthly end dates",
+          "Returned object is a DatetimeIndex"
+        ],
+        "expectedOutput": "DatetimeIndex with specified length and frequency, time series with random data, different frequency examples."
+      },
+      {
+        "id": "6C",
+        "title": "Time Zone Operations",
+        "description": "Generate date ranges by setting time zone, localize time zone and convert to particular time zone using tz_convert.",
+        "code": "import pandas as pd\n\n# 1. Generate date range with time zone\nindia_dates = pd.date_range(\n    start='2026-01-01 09:00',\n    periods=3,\n    freq='H',\n    tz='Asia/Kolkata'\n)\n\nprint(\"1. Date Range with Asia/Kolkata Time Zone:\")\nprint(india_dates)\n\n# 2. Create timezone-naive DatetimeIndex\ndates = pd.date_range(\n    start='2026-01-01 09:00',\n    periods=3,\n    freq='H'\n)\n\nprint(\"\\n2. Timezone-naive Date Range:\")\nprint(dates)\n\n# 3. Localize the timezone\nlocalized_dates = dates.tz_localize('Asia/Kolkata')\nprint(\"\\n3. After Localizing to Asia/Kolkata:\")\nprint(localized_dates)\n\n# 4. Convert to another timezone\nnew_york_dates = localized_dates.tz_convert('America/New_York')\nprint(\"\\n4. Converted to America/New_York:\")\nprint(new_york_dates)\n\n# 5. Time series with timezones\nts = pd.Series(np.random.randn(6), index=pd.date_range('2023-01-01', periods=6, freq='D'))\nts_utc = ts.tz_localize('UTC')\nts_ind = ts_utc.tz_convert('Asia/Kolkata')\nprint(\"\\n5. Time Series with timezone conversion:\")\nprint(ts_ind.head())\n\n# 6. Combine two different timezone series\nindia_series = pd.Series([100, 200, 300], index=localized_dates)\nnew_york_series = pd.Series([400, 500, 600], index=new_york_dates)\ncombined_series = pd.concat([india_series, new_york_series])\nprint(\"\\n6. Combined Time Series from different zones:\")\nprint(combined_series)",
+        "explanation": [
+          "tz parameter in date_range() creates timezone-aware dates",
+          "tz_localize() adds timezone info to naive datetime",
+          "tz_convert() converts between timezones",
+          "UTC is Coordinated Universal Time",
+          "Asia/Kolkata is IST (Indian Standard Time)",
+          "America/New_York is EST/EDT",
+          "concat() can combine series from different timezones"
+        ],
+        "expectedOutput": "DatetimeIndex with various timezone operations showing timezone conversions and combined series."
+      },
+      {
+        "id": "6D",
+        "title": "Period Arithmetic and period_range",
+        "description": "Perform period arithmetic such as adding and subtracting integers from periods and construct range of periods using period_range function.",
+        "code": "import pandas as pd\n\n# Create a monthly Period\np = pd.Period('2026-01', freq='M')\n\nprint(\"Original Period:\")\nprint(p)\n\n# Add integers to the period\nprint(\"\\nAfter adding 2:\")\nprint(p + 2)\n\nprint(\"\\nAfter adding 5:\")\nprint(p + 5)\n\n# Subtract integers from the period\nprint(\"\\nAfter subtracting 1:\")\nprint(p - 1)\n\nprint(\"\\nAfter subtracting 3:\")\nprint(p - 3)\n\n# Create a range of monthly periods\nperiods = pd.period_range(\n    start='2026-01',\n    periods=6,\n    freq='M'\n)\n\nprint(\"\\nRange of Periods:\")\nprint(periods)\n\n# Quarterly periods\nprint(\"\\nQuarterly Periods:\")\nquarterly = pd.period_range('2024Q1', periods=4, freq='Q')\nprint(quarterly)\n\n# Period arithmetic example\np = pd.Period('2024Q1')\nprint(\"\\nQuarterly Period Arithmetic:\")\nprint(f\"Original: {p}\")\nprint(f\"Next quarter: {p + 1}\")\nprint(f\"Convert to monthly (end): {p.asfreq('M', 'end')}\")",
+        "explanation": [
+          "pd.Period() creates a period object",
+          "freq='M' specifies monthly frequency",
+          "Adding integer moves period forward",
+          "Subtracting moves period backward",
+          "period_range() creates sequence of periods",
+          "Periods can be quarterly, monthly, yearly, etc.",
+          "Period arithmetic is simpler than datetime arithmetic"
+        ],
+        "expectedOutput": "Period objects with arithmetic operations and ranges of periods at different frequencies."
+      },
+      {
+        "id": "6E",
+        "title": "Convert Frequency with asfreq",
+        "description": "Convert Periods and PeriodIndex objects to another frequency with asfreq method.",
+        "code": "import pandas as pd\n\n# 1. Create a monthly Period\np = pd.Period('2026-01', freq='M')\nprint(\"Original Period:\")\nprint(p)\n\n# 2. Convert to daily frequency\ndaily_start = p.asfreq('D', how='start')\nprint(\"\\nMonthly Period converted to Daily (Start):\")\nprint(daily_start)\n\ndaily_end = p.asfreq('D', how='end')\nprint(\"\\nMonthly Period converted to Daily (End):\")\nprint(daily_end)\n\n# 3. Create a PeriodIndex\nperiod_index = pd.period_range(\n    start='2026-01',\n    periods=3,\n    freq='M'\n)\nprint(\"\\nOriginal PeriodIndex:\")\nprint(period_index)\n\n# 4. Convert PeriodIndex to daily frequency\ndaily_period_index = period_index.asfreq('D', how='start')\nprint(\"\\nPeriodIndex converted to Daily (Start):\")\nprint(daily_period_index)\n\ndaily_period_index_end = period_index.asfreq('D', how='end')\nprint(\"\\nPeriodIndex converted to Daily (End):\")\nprint(daily_period_index_end)",
+        "explanation": [
+          "asfreq() converts period to another frequency",
+          "how='start' uses beginning of period",
+          "how='end' uses end of period",
+          "Monthly to daily shows first or last day",
+          "Works on both Period and PeriodIndex objects",
+          "Useful for frequency alignment in analysis"
+        ],
+        "expectedOutput": "Period and PeriodIndex objects converted between different frequencies showing start and end conversions."
+      },
+      {
+        "id": "6F",
+        "title": "Convert Timestamps to Periods",
+        "description": "Convert Series and DataFrame objects indexed by timestamps to periods with the to_period method.",
+        "code": "import pandas as pd\n\n# 1. Create a Series with timestamp index\ndates = pd.to_datetime([\n    '2026-01-10',\n    '2026-02-15',\n    '2026-03-20',\n    '2026-04-25'\n])\n\nsales = pd.Series(\n    [1000, 1500, 1800, 2200],\n    index=dates\n)\n\nprint(\"Original Series:\")\nprint(sales)\n\n# 2. Convert to monthly periods\nperiod_series = sales.to_period('M')\nprint(\"\\nSeries converted to Monthly Periods:\")\nprint(period_series)\n\n# 3. Create a DataFrame with timestamp index\ndf = pd.DataFrame(\n    {\n        'Sales': [1000, 1500, 1800, 2200],\n        'Profit': [200, 300, 400, 500]\n    },\n    index=dates\n)\n\nprint(\"\\nOriginal DataFrame:\")\nprint(df)\n\n# 4. Convert DataFrame to monthly periods\nperiod_df = df.to_period('M')\nprint(\"\\nDataFrame converted to Monthly Periods:\")\nprint(period_df)",
+        "explanation": [
+          "to_period() converts timestamp index to period",
+          "freq parameter specifies target frequency",
+          "'M' converts to monthly periods",
+          "Works on both Series and DataFrame",
+          "Groups timestamps into periods",
+          "Useful for period-based analysis and aggregation"
+        ],
+        "expectedOutput": "Series and DataFrame with timestamp index converted to period index at monthly frequency."
+      },
+      {
+        "id": "6G",
+        "title": "Resampling: Downsampling and Upsampling",
+        "description": "Perform resampling, downsampling and upsampling for time series.",
+        "code": "import pandas as pd\nimport numpy as np\n\n# 1. Create an hourly time series\ndates = pd.date_range(\n    start='2026-01-01 00:00',\n    periods=12,\n    freq='H'\n)\n\nvalues = [10, 12, 15, 14, 18, 20, 22, 21, 25, 28, 30, 32]\ntime_series = pd.Series(values, index=dates)\n\nprint(\"Original Hourly Time Series:\")\nprint(time_series)\n\n# 2. Resampling - 3-hourly mean\nresampled = time_series.resample('3H').mean()\nprint(\"\\nResampled - 3 Hour Mean:\")\nprint(resampled)\n\n# 3. Downsampling - Hourly to 4-hourly sum\ndownsampled = time_series.resample('4H').sum()\nprint(\"\\nDownsampled - 4 Hour Sum:\")\nprint(downsampled)\n\n# 4. Upsampling - Hourly to 30-minute\nupsampled = time_series.resample('30min').asfreq()\nprint(\"\\nUpsampled - 30 Minute (with NaN):\")\nprint(upsampled.head(10))\n\n# 5. Upsampling with Forward Fill\nupsampled_ffill = time_series.resample('30min').ffill()\nprint(\"\\nUpsampled - 30 Minute (Forward Fill):\")\nprint(upsampled_ffill.head(10))\n\n# 6. Additional example with daily to monthly\nts = pd.Series(\n    np.random.randn(100),\n    index=pd.date_range('2024-01-01', periods=100)\n)\nts_monthly = ts.resample('M').mean()\nprint(\"\\nDaily to Monthly Mean:\")\nprint(ts_monthly.head())",
+        "explanation": [
+          "resample() changes time series frequency",
+          "Downsampling reduces frequency (hour→day)",
+          "Upsampling increases frequency (day→hour)",
+          "Aggregation functions: mean, sum, first, last, etc.",
+          "asfreq() creates new index without filling",
+          "ffill() forward fills missing values",
+          "Used for data alignment and aggregation"
+        ],
+        "expectedOutput": "Time series showing resampling operations with different frequencies and aggregation methods."
+      }
+    ],
+    "theory": "Time series is a sequence of data points indexed in time order. Pandas provides robust datetime functionality through Timestamp, DatetimeIndex, Period, and PeriodIndex objects. Time zones represent geographic regions with uniform time. Resampling is the process of changing the frequency of time series observations. Downsampling reduces frequency (hour to day), while upsampling increases it (day to hour). Common aggregations include mean, sum, first, last. Time series analysis is fundamental for forecasting, trend analysis, and seasonal pattern detection.",
+    "result": "Successfully implemented time series operations including creation, time zone handling, period arithmetic, frequency conversion, and resampling.",
+    "vivaQuestions": [
+      "What is a DatetimeIndex in Pandas?",
+      "What is the difference between Timestamp and Period?",
+      "How do you handle time zone conversions?",
+      "What is downsampling vs upsampling?",
+      "What does asfreq() do?",
+      "How does to_period() work?",
+      "What is the purpose of date_range()?",
+      "What aggregation methods can be used with resample()?"
+    ]
+  },
+  {
+    "id": 7,
+    "number": "07",
+    "title": "Data Aggregation and Group Operations",
+    "shortDescription": "Master grouped aggregations and exploratory data analysis using real-world datasets.",
+    "aim": "To learn grouping, aggregation, and statistical analysis techniques for data exploration.",
+    "overview": "Grouping data by categories and computing summary statistics is essential for data analysis. This experiment demonstrates groupby operations, aggregation functions, and exploratory analysis patterns.",
+    "technologies": ["Python", "Pandas", "Statistics", "EDA"],
+    "keywords": ["groupby", "aggregation", "statistics", "exploratory data analysis", "group operations"],
+    "video": "https://www.youtube.com/watch?v=Wb2Tp35dZ-I",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Used in business analytics for sales by region, customer segmentation, performance metrics by department, and any scenario requiring category-wise analysis.",
+    "learningObjectives": [
+      "Understand groupby mechanics",
+      "Apply multiple aggregation functions",
+      "Perform multi-level grouping",
+      "Conduct exploratory data analysis"
+    ],
+    "subExperiments": [],
+    "theory": "GroupBy operations follow the split-apply-combine pattern: split data into groups based on criteria, apply a function to each group independently, combine results into a data structure. Common aggregation functions include sum, mean, median, count, min, max, std, and var. Multiple keys create hierarchical grouping. Custom aggregation functions can be applied using agg() or apply(). Exploratory Data Analysis (EDA) is an approach to analyzing datasets to summarize main characteristics, often using visual methods and summary statistics.",
+    "result": "Successfully performed groupby operations with single and multiple keys, applied various aggregation functions, and conducted exploratory data analysis.",
+    "vivaQuestions": [
+      "What is the split-apply-combine pattern?",
+      "How does groupby() work?",
+      "What is the difference between agg() and apply()?",
+      "How do you group by multiple columns?",
+      "What aggregation functions are commonly used?",
+      "What is exploratory data analysis?",
+      "How do you handle missing values in grouped data?",
+      "What is the purpose of transform() in groupby?"
+    ]
+  },
+  {
+    "id": 8,
+    "number": "08",
+    "title": "Web Scraping using Beautiful Soup",
+    "shortDescription": "Learn ethical web scraping techniques for data extraction and perform sentiment analysis on reviews.",
+    "aim": "To understand web scraping fundamentals, data extraction, and sentiment analysis on textual data.",
+    "overview": "Web scraping enables data collection from websites. This experiment covers HTML parsing, data extraction, text analysis including word clouds, sentiment analysis, and visualization of review data.",
+    "technologies": ["Python", "Beautiful Soup", "Requests", "NLTK", "VADER", "WordCloud"],
+    "keywords": ["web scraping", "beautiful soup", "html parsing", "sentiment analysis", "wordcloud", "nltk", "vader"],
+    "video": "https://www.youtube.com/watch?v=ng2o98k983k",
+    "colabUrl": "https://colab.research.com/",
+    "realWorldApplication": "Used for price monitoring, review analysis, market research, content aggregation, and competitive intelligence. Essential for data scientists collecting web data.",
+    "learningObjectives": [
+      "Understand HTML structure and parsing",
+      "Extract structured data from websites",
+      "Perform text preprocessing and analysis",
+      "Apply sentiment analysis techniques",
+      "Visualize text data insights"
+    ],
+    "subExperiments": [],
+    "theory": "Web scraping is the automated extraction of data from websites. HTML (HyperText Markup Language) structures web pages using tags. Beautiful Soup parses HTML/XML and provides methods to navigate and search the parse tree. Ethical scraping respects robots.txt, rate limits, and terms of service. Sentiment analysis determines emotional tone of text (positive, negative, neutral). VADER (Valence Aware Dictionary and sEntiment Reasoner) is optimized for social media text. WordCloud visualizes word frequency. Text preprocessing includes lowercasing, removing stopwords, and tokenization.",
+    "result": "Successfully demonstrated web scraping for data extraction, exploratory analysis of textual data, sentiment analysis, and visualization techniques for review data.",
+    "vivaQuestions": [
+      "What is Beautiful Soup used for?",
+      "What is robots.txt and why is it important?",
+      "How do you parse HTML with Beautiful Soup?",
+      "What is sentiment analysis?",
+      "What is VADER sentiment analyzer?",
+      "What are stopwords and why remove them?",
+      "How does a WordCloud work?",
+      "What ethical considerations apply to web scraping?"
+    ]
+  },
+  {
+    "id": 9,
+    "number": "09",
+    "title": "Case Study: Customer Personality Analysis",
+    "shortDescription": "Analyze customer data to understand segments and predict marketing campaign responses.",
+    "aim": "To perform comprehensive customer personality analysis for marketing optimization and customer segmentation.",
+    "overview": "Customer personality analysis helps businesses understand customer behavior, preferences, and purchasing patterns. This case study involves data preprocessing, exploratory analysis, customer segmentation, and deriving actionable business insights.",
+    "technologies": ["Python", "Pandas", "Matplotlib", "Seaborn", "Machine Learning", "Clustering"],
+    "keywords": ["customer analysis", "segmentation", "marketing", "clustering", "business analytics", "customer behavior"],
+    "video": "https://www.youtube.com/watch?v=7eh4d6sabA0",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Essential for targeted marketing campaigns, personalized recommendations, customer retention strategies, product development, and optimizing marketing spend across customer segments.",
+    "learningObjectives": [
+      "Understand business problem formulation",
+      "Perform comprehensive EDA on customer data",
+      "Apply customer segmentation techniques",
+      "Derive actionable business insights",
+      "Communicate findings effectively"
+    ],
+    "subExperiments": [],
+    "theory": "Customer personality analysis examines psychological attributes, lifestyle, social class, and behavioral traits to predict purchasing behavior. RFM (Recency, Frequency, Monetary) analysis segments customers based on transaction history. Clustering algorithms like K-Means group similar customers. Feature engineering creates meaningful variables from raw data. Customer Lifetime Value (CLV) predicts future value. Market segmentation divides customers into groups with similar characteristics. A/B testing validates campaign effectiveness. Data-driven marketing optimizes resource allocation.",
+    "result": "Successfully performed end-to-end customer personality analysis including data preprocessing, exploratory analysis, segmentation, visualization, and business insight generation for marketing optimization.",
+    "vivaQuestions": [
+      "What is customer segmentation?",
+      "What is RFM analysis?",
+      "How does K-Means clustering work?",
+      "What is Customer Lifetime Value?",
+      "Why is feature engineering important?",
+      "What are the benefits of customer segmentation?",
+      "How do you validate segmentation quality?",
+      "What is the business value of personality analysis?"
+    ]
+  },
+  {
+    "id": 10,
+    "number": "10",
+    "title": "Case Study: Text Emotions Detection",
+    "shortDescription": "Build an emotion detection system that classifies text into emotions and displays appropriate emojis.",
+    "aim": "To develop a text emotion classification system using machine learning for real-time emotion prediction.",
+    "overview": "Text emotion detection identifies emotional states expressed in text (joy, sadness, anger, fear, surprise, love). This project covers text preprocessing, feature extraction, model training, prediction, and emoji-based visualization.",
+    "technologies": ["Python", "NLTK", "Scikit-learn", "Machine Learning", "NLP", "Text Classification"],
+    "keywords": ["emotion detection", "nlp", "text classification", "sentiment", "machine learning", "emoji"],
+    "video": "https://www.youtube.com/watch?v=aircAruvnKk",
+    "colabUrl": "https://colab.research.google.com/",
+    "realWorldApplication": "Powers intelligent chatbots, customer support systems, mental health monitoring, social media analysis, brand sentiment tracking, and personalized user experiences.",
+    "learningObjectives": [
+      "Understand text classification pipeline",
+      "Perform text preprocessing and cleaning",
+      "Extract features using TF-IDF or embeddings",
+      "Train emotion classification models",
+      "Deploy interactive prediction system"
+    ],
+    "subExperiments": [],
+    "theory": "Natural Language Processing (NLP) enables computers to understand human language. Text classification assigns predefined categories to text. Preprocessing includes tokenization, lowercasing, removing special characters, and stopword removal. Feature extraction converts text to numerical vectors. TF-IDF (Term Frequency-Inverse Document Frequency) weighs word importance. Machine learning classifiers include Naive Bayes, Logistic Regression, SVM, and Neural Networks. Emotions in text are typically categorized into Ekman's six basic emotions: joy, sadness, anger, fear, surprise, and disgust. Applications span customer service, mental health, education, and entertainment.",
+    "result": "Successfully built an emotion detection system with text preprocessing, feature extraction, model training, prediction functionality, and emoji-based emotion visualization for interactive user experience.",
+    "vivaQuestions": [
+      "What is text classification?",
+      "How does TF-IDF work?",
+      "What are Ekman's basic emotions?",
+      "What is tokenization?",
+      "How do you evaluate a classification model?",
+      "What is the difference between sentiment and emotion?",
+      "What preprocessing steps are needed for text?",
+      "What applications use emotion detection?"
+    ]
+  }
+]
