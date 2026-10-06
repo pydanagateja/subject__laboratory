@@ -1,0 +1,83 @@
+================================================================================
+🚀 DEPLOY YOUR SUBJECT LABORATORY TO NETLIFY - SIMPLE STEPS
+================================================================================
+
+✅ YOUR CODE IS READY TO DEPLOY!
+Git is initialized and all files are committed.
+
+================================================================================
+STEP 1: CREATE GITHUB REPOSITORY
+================================================================================
+
+1. Open: https://github.com
+2. Click "+" (top right) → "New repository"
+3. Name: subject-laboratory-ds
+4. Keep it Public
+5. DON'T check any boxes
+6. Click "Create repository"
+
+================================================================================
+STEP 2: PUSH TO GITHUB (Run these commands in PowerShell)
+================================================================================
+
+cd "C:\Users\pydan\OneDrive\Desktop\datascience_digital lab\digital-laboratory"
+
+git remote add origin https://github.com/YOUR-USERNAME/subject-laboratory-ds.git
+                                        ^^^^^^^^^^^^^^^^
+                            (Replace with YOUR GitHub username)
+
+git branch -M main
+
+git push -u origin main
+
+🔐 GitHub will ask for login:
+   Username: Your GitHub username
+   Password: Use Personal Access Token (NOT your password!)
+   Get token: https://github.com/settings/tokens
+
+================================================================================
+STEP 3: DEPLOY TO NETLIFY
+================================================================================
+
+1. Open: https://app.netlify.com
+2. Sign up/Login (use GitHub to login - it's easier!)
+3. Click "Add new site" → "Import an existing project"
+4. Click "Deploy with GitHub"
+5. Authorize Netlify
+6. Select your repository: subject-laboratory-ds
+7. Click "Deploy site"
+
+⏱️ Wait 2-3 minutes → YOUR SITE IS LIVE! 🎉
+
+================================================================================
+YOUR LIVE WEBSITE
+================================================================================
+
+After deployment, you'll get a URL like:
+https://random-name-123456.netlify.app
+
+Change it to something better:
+1. Site settings → "Change site name"
+2. Enter: subject-laboratory-ds
+3. Your new URL: https://subject-laboratory-ds.netlify.app
+
+================================================================================
+SHARE YOUR WEBSITE
+================================================================================
+
+✅ Share with faculty
+✅ Share with classmates
+✅ Add to your resume/portfolio
+✅ Show in college project presentations
+
+================================================================================
+NEED MORE HELP?
+================================================================================
+
+See these files in your project:
+📄 DEPLOYMENT-STATUS.md - Current status & next steps
+📄 NETLIFY-DEPLOYMENT-GUIDE.md - Detailed guide
+📄 QUICK-DEPLOY.md - Quick commands
+📄 PDF-CREATION-GUIDE.md - How to add module PDFs
+
+================================================================================

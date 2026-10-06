@@ -1,0 +1,366 @@
+[
+  {
+    "id": 1,
+    "number": "01",
+    "title": "Introduction to Data Science",
+    "description": "Comprehensive introduction to data science fundamentals, covering definitions, skills, tools, data types, and various types of analytics.",
+    "detailedDescription": "This module provides a comprehensive foundation in Data Science, covering essential concepts, required skills, and tools used in the field. Students will learn about different data types, preprocessing techniques, and various analytical approaches including descriptive, diagnostic, predictive, prescriptive, exploratory, and mechanistic analysis. The module establishes the groundwork for understanding how data science is applied across industries to solve complex problems and drive decision-making.",
+    "learningObjectives": [
+      "Understand the fundamental concepts and definitions of Data Science",
+      "Identify essential skills and tools required for data science projects",
+      "Learn different data types and data collection methods",
+      "Master data preprocessing techniques for cleaning and transforming data",
+      "Comprehend various types of analytics and their applications"
+    ],
+    "periods": 9,
+    "pdfPath": "/pdfs/module-1.pdf",
+    "icon": "📊",
+    "color": "blue",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+    "subtopics": [
+      {
+        "id": "1-1",
+        "title": "Definition of Data Science",
+        "shortDescription": "Understanding what data science is and its interdisciplinary nature",
+        "slug": "definition-of-data-science"
+      },
+      {
+        "id": "1-2",
+        "title": "Skills for Data Science",
+        "shortDescription": "Essential technical and soft skills required for data scientists",
+        "slug": "skills-for-data-science"
+      },
+      {
+        "id": "1-3",
+        "title": "Tools for Data Science",
+        "shortDescription": "Overview of programming languages, libraries, and platforms",
+        "slug": "tools-for-data-science"
+      },
+      {
+        "id": "1-4",
+        "title": "Data Types and Data Collections",
+        "shortDescription": "Understanding structured, unstructured, and semi-structured data",
+        "slug": "data-types-and-collections"
+      },
+      {
+        "id": "1-5",
+        "title": "Data Preprocessing",
+        "shortDescription": "Techniques for cleaning, transforming, and preparing data",
+        "slug": "data-preprocessing"
+      },
+      {
+        "id": "1-6",
+        "title": "Descriptive Analysis",
+        "shortDescription": "Summarizing and describing data characteristics",
+        "slug": "descriptive-analysis"
+      },
+      {
+        "id": "1-7",
+        "title": "Diagnostic Analytics",
+        "shortDescription": "Understanding why something happened through root cause analysis",
+        "slug": "diagnostic-analytics"
+      },
+      {
+        "id": "1-8",
+        "title": "Predictive Analytics",
+        "shortDescription": "Forecasting future outcomes using statistical models",
+        "slug": "predictive-analytics"
+      },
+      {
+        "id": "1-9",
+        "title": "Prescriptive Analytics",
+        "shortDescription": "Recommending actions based on predictions and constraints",
+        "slug": "prescriptive-analytics"
+      },
+      {
+        "id": "1-10",
+        "title": "Exploratory Analysis",
+        "shortDescription": "Discovering patterns and relationships in data",
+        "slug": "exploratory-analysis"
+      },
+      {
+        "id": "1-11",
+        "title": "Mechanistic Analysis",
+        "shortDescription": "Understanding exact mechanisms and cause-effect relationships",
+        "slug": "mechanistic-analysis"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "number": "02",
+    "title": "Data Extraction and Feature Engineering",
+    "description": "Learn techniques for extracting meaningful insights from data through feature selection, dimensionality reduction, and advanced algorithms.",
+    "detailedDescription": "This module focuses on extracting meaningful information from data through various feature selection and dimensionality reduction techniques. Students will learn about decision trees, random forests, and advanced methods like SVD and PCA. The module emphasizes practical approaches to handling high-dimensional data and selecting the most relevant features for building effective machine learning models.",
+    "learningObjectives": [
+      "Master feature selection techniques to identify relevant data attributes",
+      "Understand entropy and information gain in decision-making",
+      "Learn decision tree algorithms and random forest implementations",
+      "Solve dimensionality problems using SVD and PCA",
+      "Apply feature extraction methods to real-world datasets"
+    ],
+    "periods": 9,
+    "pdfPath": "/pdfs/module-2.pdf",
+    "icon": "🔍",
+    "color": "green",
+    "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop",
+    "subtopics": [
+      {
+        "id": "2-1",
+        "title": "Extracting Meaning from Data",
+        "shortDescription": "Identifying patterns, trends, and actionable insights",
+        "slug": "extracting-meaning-from-data"
+      },
+      {
+        "id": "2-2",
+        "title": "Feature Selection Techniques",
+        "shortDescription": "Methods to select most relevant features for modeling",
+        "slug": "feature-selection-techniques"
+      },
+      {
+        "id": "2-3",
+        "title": "Filters and Wrappers",
+        "shortDescription": "Two main approaches to feature selection",
+        "slug": "filters-and-wrappers"
+      },
+      {
+        "id": "2-4",
+        "title": "Entropy in Feature Selection",
+        "shortDescription": "Using information theory for feature evaluation",
+        "slug": "entropy-in-feature-selection"
+      },
+      {
+        "id": "2-5",
+        "title": "Decision Tree Algorithm",
+        "shortDescription": "Tree-based classification and regression technique",
+        "slug": "decision-tree-algorithm"
+      },
+      {
+        "id": "2-6",
+        "title": "Random Forests",
+        "shortDescription": "Ensemble method combining multiple decision trees",
+        "slug": "random-forests"
+      },
+      {
+        "id": "2-7",
+        "title": "The Dimensionality Problem",
+        "shortDescription": "Understanding curse of dimensionality and its challenges",
+        "slug": "dimensionality-problem"
+      },
+      {
+        "id": "2-8",
+        "title": "Singular Value Decomposition (SVD)",
+        "shortDescription": "Matrix factorization for dimensionality reduction",
+        "slug": "singular-value-decomposition"
+      },
+      {
+        "id": "2-9",
+        "title": "Principal Component Analysis (PCA)",
+        "shortDescription": "Statistical technique for reducing data dimensions",
+        "slug": "principal-component-analysis"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "number": "03",
+    "title": "Data Visualization",
+    "description": "Master data visualization techniques using matplotlib, Pandas, and Seaborn to create compelling visual representations.",
+    "detailedDescription": "This module teaches the art and science of data visualization using Python's powerful libraries. Students will learn to create various types of plots and charts, understand when to use each visualization technique, and develop skills in presenting data insights effectively. The module covers matplotlib, seaborn, and pandas plotting capabilities, emphasizing best practices for creating clear, informative visualizations.",
+    "learningObjectives": [
+      "Create effective visualizations using Matplotlib and Seaborn",
+      "Build various plot types: line plots, bar charts, histograms, and scatter plots",
+      "Understand when to use different visualization techniques",
+      "Design facet grids for multi-dimensional data exploration",
+      "Apply best practices for data visualization and storytelling"
+    ],
+    "periods": 8,
+    "pdfPath": "/pdfs/module-3.pdf",
+    "icon": "📈",
+    "color": "purple",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    "subtopics": [
+      {
+        "id": "3-1",
+        "title": "Matplotlib API Primer",
+        "shortDescription": "Foundation of Python plotting with matplotlib",
+        "slug": "matplotlib-api-primer"
+      },
+      {
+        "id": "3-2",
+        "title": "Plotting with Pandas and Seaborn",
+        "shortDescription": "High-level plotting interfaces for data analysis",
+        "slug": "plotting-pandas-seaborn"
+      },
+      {
+        "id": "3-3",
+        "title": "Line Plots",
+        "shortDescription": "Visualizing trends and time series data",
+        "slug": "line-plots"
+      },
+      {
+        "id": "3-4",
+        "title": "Bar Plots",
+        "shortDescription": "Comparing categorical data with bar charts",
+        "slug": "bar-plots"
+      },
+      {
+        "id": "3-5",
+        "title": "Histograms and Density Plots",
+        "shortDescription": "Understanding data distributions",
+        "slug": "histograms-density-plots"
+      },
+      {
+        "id": "3-6",
+        "title": "Scatter Plots",
+        "shortDescription": "Exploring relationships between variables",
+        "slug": "scatter-plots"
+      },
+      {
+        "id": "3-7",
+        "title": "Facet Grids",
+        "shortDescription": "Multi-panel plots for complex data",
+        "slug": "facet-grids"
+      },
+      {
+        "id": "3-8",
+        "title": "Categorical Data Visualization",
+        "shortDescription": "Special techniques for categorical variables",
+        "slug": "categorical-visualization"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "number": "04",
+    "title": "Statistical Thinking",
+    "description": "Develop statistical thinking skills by understanding distributions, probability functions, and statistical modeling.",
+    "detailedDescription": "This module develops essential statistical thinking skills required for data science. Students will learn about probability distributions, statistical measures, and how to model real-world phenomena. Topics include PMFs, CDFs, various distribution types, and statistical inference. The module emphasizes practical application of statistics in data analysis and decision-making.",
+    "learningObjectives": [
+      "Understand probability distributions and their representations",
+      "Calculate and interpret statistical measures",
+      "Work with PMFs and CDFs for probability analysis",
+      "Model real-world phenomena using various distributions",
+      "Apply statistical thinking to solve data science problems"
+    ],
+    "periods": 11,
+    "pdfPath": "/pdfs/module-4.pdf",
+    "icon": "📉",
+    "color": "orange",
+    "image": "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=400&fit=crop",
+    "subtopics": [
+      {
+        "id": "4-1",
+        "title": "Distributions and Histograms",
+        "shortDescription": "Understanding and visualizing data distributions",
+        "slug": "distributions-histograms"
+      },
+      {
+        "id": "4-2",
+        "title": "Outliers Detection",
+        "shortDescription": "Identifying and handling anomalous data points",
+        "slug": "outliers-detection"
+      },
+      {
+        "id": "4-3",
+        "title": "Summarizing Distributions",
+        "shortDescription": "Statistical measures of central tendency and spread",
+        "slug": "summarizing-distributions"
+      },
+      {
+        "id": "4-4",
+        "title": "Probability Mass Function (PMF)",
+        "shortDescription": "Probability distributions for discrete variables",
+        "slug": "probability-mass-function"
+      },
+      {
+        "id": "4-5",
+        "title": "Cumulative Distribution Functions (CDFs)",
+        "shortDescription": "Understanding cumulative probabilities",
+        "slug": "cumulative-distribution-functions"
+      },
+      {
+        "id": "4-6",
+        "title": "Percentile Based Statistics",
+        "shortDescription": "Quantiles, quartiles, and percentiles",
+        "slug": "percentile-statistics"
+      },
+      {
+        "id": "4-7",
+        "title": "Normal Distribution",
+        "shortDescription": "The bell curve and its applications",
+        "slug": "normal-distribution"
+      },
+      {
+        "id": "4-8",
+        "title": "Exponential Distribution",
+        "shortDescription": "Modeling time between events",
+        "slug": "exponential-distribution"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "number": "05",
+    "title": "Time Series Analysis and Predictive Modeling",
+    "description": "Learn time series analysis techniques and build predictive models for forecasting and sentiment analysis.",
+    "detailedDescription": "This advanced module covers time series analysis and predictive modeling techniques. Students will learn to work with temporal data, identify trends and patterns, handle seasonality, and build forecasting models. The module also introduces sentiment analysis as a practical application of predictive modeling in natural language processing.",
+    "learningObjectives": [
+      "Analyze and visualize time series data effectively",
+      "Handle missing values and clean time series datasets",
+      "Calculate moving averages and detect trends",
+      "Understand autocorrelation and serial correlation",
+      "Build and evaluate predictive models",
+      "Perform sentiment analysis on textual data"
+    ],
+    "periods": 8,
+    "pdfPath": "/pdfs/module-5.pdf",
+    "icon": "🔮",
+    "color": "red",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+    "subtopics": [
+      {
+        "id": "5-1",
+        "title": "Time Series Analysis - Importing and Cleaning",
+        "shortDescription": "Working with temporal data in Python",
+        "slug": "time-series-importing-cleaning"
+      },
+      {
+        "id": "5-2",
+        "title": "Plotting Time Series Data",
+        "shortDescription": "Visualizing temporal patterns and trends",
+        "slug": "plotting-time-series"
+      },
+      {
+        "id": "5-3",
+        "title": "Moving Averages",
+        "shortDescription": "Smoothing techniques for trend analysis",
+        "slug": "moving-averages"
+      },
+      {
+        "id": "5-4",
+        "title": "Autocorrelation Analysis",
+        "shortDescription": "Understanding temporal dependencies",
+        "slug": "autocorrelation-analysis"
+      },
+      {
+        "id": "5-5",
+        "title": "Predictive Modeling Overview",
+        "shortDescription": "Introduction to forecasting techniques",
+        "slug": "predictive-modeling-overview"
+      },
+      {
+        "id": "5-6",
+        "title": "Evaluating Predictive Models",
+        "shortDescription": "Metrics and techniques for model assessment",
+        "slug": "evaluating-predictive-models"
+      },
+      {
+        "id": "5-7",
+        "title": "Sentiment Analysis",
+        "shortDescription": "Analyzing opinions and emotions in text",
+        "slug": "sentiment-analysis"
+      }
+    ]
+  }
+]

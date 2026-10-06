@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Modules from './pages/Modules'
 import ModuleDetail from './pages/ModuleDetail'
+import SubtopicNotes from './pages/SubtopicNotes'
 import ExperimentsPage from './pages/ExperimentsPage'
 import ExperimentDetail from './pages/ExperimentDetail'
 import Tools from './pages/Tools'
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/modules" element={<Modules />} />
           <Route path="/modules/:id" element={<ModuleDetail />} />
+          <Route path="/modules/:moduleId/:subtopicSlug" element={<SubtopicNotes />} />
           <Route path="/experiments" element={<ExperimentsPage />} />
           <Route path="/experiments/:id" element={<ExperimentDetail />} />
           <Route path="/tools" element={<Tools />} />
