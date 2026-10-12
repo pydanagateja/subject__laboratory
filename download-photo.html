@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Student Photo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .photo-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border: 3px dashed #667eea;
+        }
+        .photo-container img {
+            max-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #2196F3;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #1976D2;
+        }
+        .instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .path-box {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+            margin: 15px 0;
+            border: 2px solid #ffc107;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .button-group {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .status {
+            text-align: center;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        .checklist {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .checklist h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .check-item {
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Add Student Photo to Profile</h1>
+        <p class="subtitle">Student: P. Naga Teja | Roll: 24102A030102</p>
+
+        <div class="instructions">
+            <h3>🎯 Simple 3-Step Process</h3>
+            <ol>
+                <li><strong>Right-click on your photo</strong> (from the chat where you sent it)</li>
+                <li><strong>Select "Save image as..."</strong></li>
+                <li><strong>Save it as:</strong> <code>student-photo.jpg</code></li>
+            </ol>
+        </div>
+
+        <div class="instructions">
+            <h3>📁 Then Place Photo in This Folder:</h3>
+            <div class="path-box">
+                C:\Users\pydan\OneDrive\Desktop\datascience_digital lab\digital-laboratory\public\assets\student-photo.jpg
+            </div>
+            
+            <p><strong>Quick Way to Open Folder:</strong></p>
+            <ol>
+                <li>Press <strong>Windows + R</strong> on your keyboard</li>
+                <li>Paste this path and press Enter:</li>
+            </ol>
+            <div class="path-box">
+                C:\Users\pydan\OneDrive\Desktop\datascience_digital lab\digital-laboratory\public\assets
+            </div>
+            <p>The folder will open - just drag your photo into it!</p>
+        </div>
+
+        <div class="button-group">
+            <button class="button" onclick="copyPath()">📋 Copy Folder Path</button>
+            <button class="button" onclick="openInstructions()">📖 View Full Instructions</button>
+        </div>
+
+        <div class="checklist">
+            <h3>✅ Checklist</h3>
+            <div class="check-item">□ Photo saved from chat as student-photo.jpg</div>
+            <div class="check-item">□ Photo placed in public/assets/ folder</div>
+            <div class="check-item">□ Filename is exactly: student-photo.jpg</div>
+            <div class="check-item">□ Website running (npm run dev)</div>
+            <div class="check-item">□ Photo appears on home page!</div>
+        </div>
+
+        <div class="status success">
+            ✅ Component is ready! Just add the photo file and it will display automatically!
+        </div>
+
+        <div class="instructions">
+            <h3>🚀 After Adding Photo:</h3>
+            <p>Run your website to see the photo:</p>
+            <div class="path-box">
+                cd "C:\Users\pydan\OneDrive\Desktop\datascience_digital lab\digital-laboratory"<br>
+                npm run dev
+            </div>
+            <p>Then open: <strong>http://localhost:5173</strong></p>
+            <p>Your photo will appear in the Student Profile Card! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        function copyPath() {
+            const path = 'C:\\Users\\pydan\\OneDrive\\Desktop\\datascience_digital lab\\digital-laboratory\\public\\assets';
+            navigator.clipboard.writeText(path).then(() => {
+                alert('✅ Folder path copied to clipboard!\n\nNow:\n1. Press Windows + R\n2. Paste (Ctrl + V) and press Enter\n3. The folder will open!');
+            }).catch(() => {
+                alert('Path: ' + path + '\n\nPress Windows + R and paste this path.');
+            });
+        }
+
+        function openInstructions() {
+            alert('Instructions:\n\n1. Right-click your photo in the chat\n2. Select "Save image as..."\n3. Name it: student-photo.jpg\n4. Press Windows + R\n5. Paste the folder path\n6. Drag your photo into the folder\n7. Run: npm run dev\n8. Your photo appears! 🎉');
+        }
+    </script>
+</body>
+</html>

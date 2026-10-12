@@ -10,7 +10,8 @@ const StudentProfileCard = () => {
     courseId: "22DS102006",
     subject: "Data Science",
     faculty: "Bosu Babu",
-    designation: "Assistant Professor"
+    designation: "Assistant Professor",
+    photoPath: "/assets/student-photo.jpg" // Add your photo here
   };
 
   return (
@@ -30,8 +31,23 @@ const StudentProfileCard = () => {
         {/* Profile Image Section */}
         <div className="flex-shrink-0 flex justify-center md:justify-start">
           <div className="relative">
-            <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center border-4 border-white shadow-md">
-              <User className="w-12 h-12 md:w-14 md:h-14 text-primary-600" />
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center border-4 border-white shadow-md overflow-hidden">
+              {student.photoPath ? (
+                <img 
+                  src={student.photoPath} 
+                  alt={student.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to icon if image fails to load
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <User 
+                className="w-12 h-12 md:w-14 md:h-14 text-primary-600" 
+                style={{ display: student.photoPath ? 'none' : 'block' }}
+              />
             </div>
             <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center shadow-md">
               <GraduationCap className="w-5 h-5 text-white" />
