@@ -11,7 +11,7 @@ const StudentProfileCard = () => {
     subject: "Data Science",
     faculty: "Bosu Babu",
     designation: "Assistant Professor",
-    photoPath: "/assets/student-photo.jpg" // Add your photo here
+    photoPath: null // Set to "/assets/student-photo.jpg" when you add your photo
   };
 
   return (
