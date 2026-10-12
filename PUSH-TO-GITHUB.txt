@@ -1,0 +1,71 @@
+================================================================================
+🚀 PUSH TO GITHUB - QUICK COMMANDS
+================================================================================
+
+STEP 1: Create GitHub Repository
+---------------------------------
+1. Go to: https://github.com
+2. Click "+" → "New repository"
+3. Name: data-science-laboratory
+4. Click "Create repository"
+
+================================================================================
+STEP 2: Copy Your GitHub URL
+---------------------------------
+
+After creating repository, GitHub will show you a URL like:
+https://github.com/YOUR-USERNAME/data-science-laboratory.git
+
+COPY THIS URL!
+
+================================================================================
+STEP 3: Run These Commands
+---------------------------------
+
+Open PowerShell and run (REPLACE YOUR-USERNAME with your GitHub username):
+
+cd "C:\Users\pydan\OneDrive\Desktop\datascience_digital lab\digital-laboratory"
+
+git remote add origin https://github.com/YOUR-USERNAME/data-science-laboratory.git
+
+git branch -M main
+
+git push -u origin main
+
+================================================================================
+AUTHENTICATION
+---------------------------------
+
+When GitHub asks for credentials:
+- Username: Your GitHub username
+- Password: Personal Access Token (NOT your password!)
+
+Get Token: https://github.com/settings/tokens
+- Click "Generate new token (classic)"
+- Select "repo" scope
+- Copy token and use as password
+
+================================================================================
+EXAMPLE (Replace with YOUR username)
+---------------------------------
+
+If your GitHub username is "nagateja":
+
+git remote add origin https://github.com/nagateja/data-science-laboratory.git
+git branch -M main
+git push -u origin main
+
+================================================================================
+AFTER SUCCESSFUL PUSH
+---------------------------------
+
+✅ Your code is on GitHub!
+✅ View at: https://github.com/YOUR-USERNAME/data-science-laboratory
+
+Next: Deploy to Netlify for public URL!
+
+================================================================================
+
+Need detailed instructions? See: GITHUB-PUSH-GUIDE.md
+
+================================================================================
