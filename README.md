@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DIGITAL LABORATORY - Data Science
 
 A professional, modern, and responsive educational web application for Data Science laboratory experiments.
@@ -271,3 +272,7 @@ This is a college project. For suggestions or improvements, please contact the s
 ---
 
 **Note:** This is a first version of the Digital Laboratory platform. Video content and additional interactive features will be added in future updates.
+=======
+# subject__laboratory
+A digital learning platform that organizes Data Science modules, subtopics, detailed notes, experiments, practical resources, and downloadable module PDFs in an interactive and student-friendly interface.
+>>>>>>> fcd57337e677fad376695d46493f9cda0269e7f6
